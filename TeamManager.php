@@ -6,19 +6,19 @@
     <title>Dashboard</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
-        .navbar {
+        .sidebar {
             background-color: #333;
             overflow: hidden;
             padding: 10px;
             text-align: center;
         }
-        .navbar a {
+        .sidebar a {
             color: white;
             padding: 14px 20px;
             text-decoration: none;
             display: inline-block;
         }
-        .navbar a:hover {
+        .sidebar a:hover {
             background-color: #ddd;
             color: black;
         }
@@ -31,8 +31,8 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <div class="navbar">
+    <!-- Side Bar -->
+    <div class="Sidebar">
         <a href="dashboard.php">Dashboard</a>
         <a href="withdraw.php">Withdraw</a>
         <a href="deposit.php">Deposit</a>
