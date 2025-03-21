@@ -7,6 +7,7 @@
     <input type="password" name="password" placeholder="Password" required>
     <br><br>
     <button type="submit" value="submit">Login</button>
+    <br>
     <button type="submit" value="submit">Sign up</button>
 </form>
 </div>
@@ -30,10 +31,10 @@ input {
 }
 
 button {
-    display: inline-block;  
+    display: block;  
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 0 10px;         
+    margin: 0 auto;         
     padding: 10px 40px;
     background: #ccc;
     background-color: white;
@@ -71,4 +72,4 @@ html {
     border: 2px solid #ccc;
 }
 
-    </style>
+</style>
