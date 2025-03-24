@@ -3,47 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Team Manager</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
+ 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+
         .sidebar {
-            background-color: #333;
-            overflow: hidden;
-            padding: 10px;
-            text-align: center;
-        }
-        .sidebar a {
+            width: 250px;
+            background-color: #153C57;
             color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            display: inline-block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            padding-top: 20px;
+            padding-left: 10px;
         }
-        .sidebar a:hover {
-            background-color: #ddd;
-            color: black;
+
+        .sidebar h2 {
+            color: #ecf0f1;
+            font-size: 24px;
+            margin-bottom: 30px;
         }
-        .chart-container {
-            width: 50%;
-            margin: auto;
-            margin-top: 30px;
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
         }
+
+        .sidebar ul li {
+            padding: 15px;
+            text-align: left;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .sidebar ul li:hover {
+            background-color:rgb(32, 88, 129);
+        }
+
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            width: 100%;
+        }
+
+
+        .content header {
+            background-color: #ecf0f1;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .content header h1 {
+            margin: 0;
+        }
+
     </style>
 </head>
 <body>
+    <div class="sidebar">
+        <h2>Team Manager</h2>
+        <ul>
+            <li>Dashboard</li>
+            <li>Team Roster</li>
+            <li>Upcoming Matches</li>
+            <li>Training Schedule</li>
+            <li>Player Managment</li>
+            <li>Match Settings</li>
+            <li>Messages</li>
+            <li>Calander</li>
+        </ul>
+    </div>
 
-    <!-- Side Bar -->
-    <div class="Sidebar">
-        <a href="dashboard.php">Dashboard</a>
-        <a href="withdraw.php">Withdraw</a>
-        <a href="deposit.php">Deposit</a>
-        <a href="transfer.php">Transfer Money</a>
-        <a href="exchangerates.php">Exchange Rates</a>
-
-        <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true): ?>
-            <a href="admin.php" style="color: yellow;">Admin</a>
-        <?php endif; ?>
-
-        <a href="../actions/logout.php" style="float:right;">Logout</a>
+    <div class="content">
+        <header>
+            <h1>Team Manager Dashboard
+            </h1>
+        </header>
     </div>
 </body>
 </html>
