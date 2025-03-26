@@ -1,0 +1,39 @@
+<?php
+session_start();
+require_once '../config/database.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    try {
+        // Check User table
+        $stmt = $conn->prepare("SELECT User_ID, Hashed_Value FROM User WHERE Email = ?");
+        $stmt->execute([$email]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user && password_verify($password, $user['Hashed_Value'])) {
+            $_SESSION['user_id'] = $user['User_ID'];
+            $_SESSION['is_admin'] = false; // This will check if the user logged in is not an admin
+            header("Location: ../views/dashboard.php");
+            exit();
+        }
+
+        $stmt = $conn->prepare("SELECT Admin_ID, Hashed_Value FROM Admin WHERE Email = ?");
+        $stmt->execute([$email]);
+        $admin = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($admin && password_verify($password, $admin['Hashed_Value'])) {
+            $_SESSION['user_id'] = $admin['Admin_ID'];
+            $_SESSION['is_admin'] = true; // Admin user
+            header("Location: ../views/dashboard.php");
+            exit();
+        }
+
+        // If no user found.
+        echo "Invalid email or password.";
+    } catch (PDOException $e) {
+        die("Database error: " . $e->getMessage());
+    }
+}
+?>
