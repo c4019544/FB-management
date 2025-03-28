@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Manager</title>
     <style>
- 
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -13,7 +12,6 @@
             display: flex;
             height: 100vh;
         }
-
 
         .sidebar {
             width: 250px;
@@ -47,16 +45,14 @@
         }
 
         .sidebar ul li:hover {
-            background-color:rgb(32, 88, 129);
+            background-color: rgb(32, 88, 129);
         }
-
 
         .content {
             margin-left: 250px;
             padding: 20px;
             width: 100%;
         }
-
 
         .content header {
             background-color: #ecf0f1;
@@ -69,27 +65,18 @@
             margin: 0;
         }
 
+        a {
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-    <div class="sidebar">
-        <h2>Team Manager</h2>
-        <ul>
-            <li>Dashboard</li>
-            <li>Team Roster</li>
-            <li>Upcoming Matches</li>
-            <li>Training Schedule</li>
-            <li>Player Managment</li>
-            <li>Match Settings</li>
-            <li>Messages</li>
-            <li>Calander</li>
-        </ul>
-    </div>
+    <?php include 'sidebar.php'; ?>
 
     <div class="content">
         <header>
-            <h1>Team Manager Dashboard
-            </h1>
+            <h1>Calander</h1>
         </header>
     </div>
 </body>
