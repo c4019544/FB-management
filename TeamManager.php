@@ -69,6 +69,11 @@
             margin: 0;
         }
 
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
     </style>
 </head>
 <body>
@@ -76,7 +81,7 @@
         <h2>Team Manager</h2>
         <ul>
             <li>Dashboard</li>
-            <li>Team Roster</li>
+            <li><a href="TeamRoster.php">Team Roster</a></li>
             <li>Upcoming Matches</li>
             <li>Training Schedule</li>
             <li>Player Managment</li>
