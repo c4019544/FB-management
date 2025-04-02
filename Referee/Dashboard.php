@@ -7,6 +7,8 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="/FB-management/assets/style.css">
 </head>
+
+
 <body>
     <?php include 'sidebar.php'; ?>
 
