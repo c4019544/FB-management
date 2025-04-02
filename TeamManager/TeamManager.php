@@ -1,15 +1,3 @@
-<?php
-$db = new PDO('sqlite:fb_management.db');
-$query = 'SELECT Room_Status, COUNT(*) as count FROM Room GROUP BY Room_Status';
-$stmt = $db->query($query);
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    if ($row['Room_Status'] == 'Occupied') {
-        $occupiedRooms = $row['count'];
-    } elseif ($row['Room_Status'] == 'Available' || $row['Room_Status'] == 'Maintenance') {
-        $emptyRooms = $emptyRooms + $row['count'];
-    }
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
