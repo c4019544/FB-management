@@ -1,7 +1,7 @@
 <?php
-$database = new SQLite3('C:\xampp\htdocs\Group\FB-management\fb_managment_system.db');
+$database = new SQLite3('C:\xampp\htdocs\Group\FB-management\FB-management-1\fb_managment_system.db');
 
-$query = "SELECT m.Match_ID, t1.team_name AS team1, t2.team_name AS team2, m.Match_Date 
+$query = "SELECT  t1.team_name AS team1, t2.team_name AS team2, m.Match_Date 
           FROM match m
           JOIN team t1 ON m.TeamA_ID = t1.team_id
           JOIN team t2 ON m.TeamB_ID = t2.team_id
@@ -101,13 +101,11 @@ if (!$results) {
         <h2>Upcoming Matches</h2>
         <table>
             <tr>
-                <th>Match ID</th>
                 <th>Teams</th>
                 <th>Date</th>
             </tr>
             <?php while ($row = $results->fetchArray(SQLITE3_ASSOC)): ?>
             <tr>
-                <td><?php echo htmlspecialchars($row['Match_ID']); ?></td>
                 <td><?php echo htmlspecialchars($row['team1']) . " vs " . htmlspecialchars($row['team2']); ?></td>
                 <td><?php echo htmlspecialchars($row['Match_Date']); ?></td>
             </tr>

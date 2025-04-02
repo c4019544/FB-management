@@ -1,10 +1,35 @@
+<?php
+$db = new PDO('sqlite:fb_management.db');
+$query = 'SELECT Room_Status, COUNT(*) as count FROM Room GROUP BY Room_Status';
+$stmt = $db->query($query);
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    if ($row['Room_Status'] == 'Occupied') {
+        $occupiedRooms = $row['count'];
+    } elseif ($row['Room_Status'] == 'Available' || $row['Room_Status'] == 'Maintenance') {
+        $emptyRooms = $emptyRooms + $row['count'];
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Manager</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        #chartContainer {
+            width: 50%; 
+            margin: 0 auto; 
+            padding-top: 20px; 
+        }
+
+        #StatsChart a{
+            width: 100% !important; 
+            height: 400px;          
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -79,5 +104,32 @@
             <h1>Team Dashboard</h1>
         </header>
     </div>
+    <div id="chartContainer">
+        <canvas id="occupancyChart"></canvas>
+    </div>
+
+    <script>
+        var occupiedRooms = <?php echo $occupiedRooms; ?>;
+        var emptyRooms = <?php echo $emptyRooms; ?>;
+
+        var ctx = document.getElementById('occupancyChart').getContext('2d');
+        var occupancyChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Occupied Rooms', 'Empty Rooms'],
+                datasets: [{
+                    label: 'Room Occupancy',
+                    data: [occupiedRooms, emptyRooms], 
+                    backgroundColor: ['#ff9999', '#66b3ff'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true, 
+                maintainAspectRatio: false 
+            }
+        });
+    </script>
 </body>
+
 </html>
