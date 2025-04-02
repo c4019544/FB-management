@@ -87,19 +87,19 @@
     <div class="sidebar">
         <h2>Admin</h2>
         <ul>
-            <li>Dashboard</li>
-            <li>Users</li>
-            <li>Teams</li>
-            <li>Matches</li>
-            <li>Reports</li>
-            <li>Settings</li>
+            <li><a href="Admin.php">Dashboard</li>
+            <li><a href="AdminUsers.php">Users</li>
+            <li><a href="AdminTeams.php">Teams</li>
+            <li><a href="AdminMatches.php">Matches</li>
+            <li><a href="AdminReports.php">Reports</li>
+            <li><a href="AdminSettings.php">Settings</li>
         </ul>
     </div>
 
 
     <div class="content">
         <header>
-            <h1>Admin Dashboard
+            <h1>Admin
             </h1>
         </header>
     </div>
