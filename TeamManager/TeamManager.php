@@ -95,6 +95,7 @@
     <div id="chartContainer">
         <canvas id="occupancyChart"></canvas>
     </div>
+<<<<<<< HEAD
 
     <script>
         var occupiedRooms = <?php echo $occupiedRooms; ?>;
@@ -118,6 +119,9 @@
             }
         });
     </script>
+
+=======
+>>>>>>> 66ad8da488ecad90cd3939de0324a682031dc610
 </body>
 
 </html>
