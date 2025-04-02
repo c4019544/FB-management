@@ -1,28 +1,22 @@
-<?php
-session_start();
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit();
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="/match_management/assets/css/style.css">
+    <link rel="stylesheet" href="/FB-management/assets/style.css">
 </head>
 
 
 <body>
-    <?php include '../includes/sidebar.php'; ?>
+    <?php include 'sidebar.php'; ?>
 
     <section class="content">
         <header>
             <h1>Dashboard</h1>
         </header>
-        <!-- <p>Welcome to the Match Management System.</p> -->
+        <!-- <p>Welcome to the FB Management System.</p> -->
         <div class="card-section">
             <div class="flex">
                 <div class="upper-left-card">
@@ -55,7 +49,7 @@ if (!isset($_SESSION['user_id'])) {
                                 </tbody>
                             </table>
                         </div>
-                        <a class="custom-button" href="/match_management/pages/ViewMatchHistory.php">View Match Details</a>
+                        <a class="custom-button" href="/FB-management/pages/ViewMatchHistory.php">View Match Details</a>
                     </div>
                 </div>
 
