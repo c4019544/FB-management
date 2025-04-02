@@ -1,6 +1,6 @@
 <div>
 <action="../actions/login_user.php" method="post">
-    <img src="Logo.png" alt="Logo">
+    <img src="/images/Logo.png" alt="Logo">
     <br><br>
     <input type="email" name="email" placeholder="Email" required>
     <br><br>
