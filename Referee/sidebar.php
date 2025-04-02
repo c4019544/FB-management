@@ -1,3 +1,4 @@
+<script src="/FB-management/assets/js/sidebar.js"></script> <!-- Link your JavaScript file -->
 
 <div class="sidebar">
     <h2>Referee</h2>
@@ -29,5 +30,5 @@
     </ul>
 </div>
 
-<script src="/FB-management/assets/js/sidebar.js"></script> <!-- Link your JavaScript file -->
+
 
