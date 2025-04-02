@@ -29,5 +29,5 @@
     </ul>
 </div>
 
-<script src="/FB-management/assets/js/sidebar.js"></script> <!-- Link your JavaScript file -->
+<script src="/FB-management/assets/sidebar.js"></script> <!-- Link your JavaScript file -->
 
