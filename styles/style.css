@@ -208,3 +208,24 @@ a {
     color: white;
     text-decoration: none;
 }
+
+ul {
+    list-style-type: none;
+}
+
+
+/* table css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #153C57;
+    color: white;
+}
