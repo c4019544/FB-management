@@ -91,6 +91,8 @@ if (!$results) {
             color: white;
         }
         ul {list-style-type: none;}
+
+//Leave the rest here
 body {font-family: Verdana, sans-serif;}
 
 .month {
