@@ -95,29 +95,6 @@
     <div id="chartContainer">
         <canvas id="occupancyChart"></canvas>
     </div>
-
-    <script>
-        var occupiedRooms = <?php echo $occupiedRooms; ?>;
-        var emptyRooms = <?php echo $emptyRooms; ?>;
-
-        var ctx = document.getElementById('occupancyChart').getContext('2d');
-        var occupancyChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ['Occupied Rooms', 'Empty Rooms'],
-                datasets: [{
-                    label: 'Room Occupancy',
-                    data: [occupiedRooms, emptyRooms], 
-                    backgroundColor: ['#ff9999', '#66b3ff'],
-                    hoverOffset: 4
-                }]
-            },
-            options: {
-                responsive: true, 
-                maintainAspectRatio: false 
-            }
-        });
-    </script>
 </body>
 
 </html>
