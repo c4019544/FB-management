@@ -20,12 +20,5 @@
         </ul>
     </div>
 
-
-    <div class="content">
-        <header>
-            <h1>Admin Dashboard
-            </h1>
-        </header>
-    </div>
 </body>
 </html>
