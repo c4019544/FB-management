@@ -28,6 +28,7 @@
         $db->close();
         ?>
     </div>
+    <div class="table-conatiner">
         <table>
             <tr>
                 <th>Active Users</th>
@@ -35,6 +36,8 @@
             <tr>
                 <td><?php echo htmlspecialchars(string: $row['total_users']); ?></td>
             </tr>
+        </table>
+    </div>
     </body>
 
     <style>
@@ -102,4 +105,21 @@ a {
     color: white;
     text-decoration: none;
 }
+
+.table-container {
+    margin-left: 270px;
+    padding: 20px;
+    width: calc(100% - 270px);
+}
+
+table {
+    width : 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
 </style>
+</html>
