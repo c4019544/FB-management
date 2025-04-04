@@ -41,11 +41,16 @@
     </body>
 
     <style>
+    
+    * {
+        cursor: default !important;
+    }
+
+    html, body {}
         body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
     height: 100vh;
     }
 
@@ -77,7 +82,7 @@
     text-align: left;
     margin: 10px 0;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: default;
     }    
 
 .sidebar ul li:hover {
@@ -113,7 +118,7 @@ a {
 }
 
 table {
-    width : 100%;
+    width : 50%;
     border-collapse: collapse;
 }
 
