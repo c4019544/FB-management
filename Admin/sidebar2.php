@@ -20,7 +20,6 @@
         </ul>
     </div>
 
-<<<<<<< HEAD:Admin/sidebar2.php
 
     <div class="content">
         <header>
@@ -28,7 +27,5 @@
             </h1>
         </header>
     </div>
-=======
->>>>>>> e250f2716ee3282f526e852f4c8d2b5bf6e83c81:Admin/sidebar.php
 </body>
 </html>
