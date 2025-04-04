@@ -1,4 +1,8 @@
+<head>
+<!-- <link rel="stylesheet" href="../styles/style.css"> -->
 </head>
+
+
 <body>
 
 <div class="container">

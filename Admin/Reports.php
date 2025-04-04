@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Roster</title>
+    <title>Reports | Admin</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
+
+
 <body>
     <?php include 'sidebar.php'; ?>
-
     <div class="content">
         <header>
-            <h1>Team Roster</h1>
+            <h1>Reports</h1>
         </header>
     </div>
 </body>
