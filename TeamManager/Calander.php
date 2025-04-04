@@ -21,24 +21,9 @@ if (!$results) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Match Calendar</title>
     <link rel="stylesheet" href="../styles/style.css">
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #153C57;
-            color: white;
-        }
-        ul {list-style-type: none;}
+<style>
 
-//Leave the rest here
+/* //Leave the rest here */
 body {font-family: Verdana, sans-serif;}
 
 .month {
@@ -110,7 +95,9 @@ body {font-family: Verdana, sans-serif;}
   background: #1abc9c;
   color: white !important
 }
-    </style>
+</style>
+
+
 </head>
 <body>
     <?php include 'sidebar.php'; ?>
