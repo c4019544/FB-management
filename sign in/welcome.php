@@ -7,7 +7,6 @@ if (!isset($_SESSION['username'])) {
     header("Location: signin_form.html");
     exit();
 }
-
 ?>
 
 <!DOCTYPE html>
