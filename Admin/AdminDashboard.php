@@ -46,12 +46,15 @@
         cursor: default !important;
     }
 
-    html, body {}
-        body {
+    html, body {
+        cursor: default !important;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+    }
+    
+    body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
     }
 
     .sidebar {
@@ -64,6 +67,7 @@
     bottom: 0;
     padding-top: 20px;
     padding-left: 10px;
+    z-index: 1;
     }
 
     .sidebar h2 {
@@ -90,7 +94,7 @@
 }
 
 .content {
-    margin-left: 250px;
+    margin-left: 1000px;
     padding: 20px;
     width: 100%;
 }
@@ -115,6 +119,7 @@ a {
     margin-left: 270px;
     padding: 20px;
     width: calc(100% - 270px);
+    position: relative;
 }
 
 table {
