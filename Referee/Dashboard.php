@@ -1,17 +1,17 @@
+<?php include ("C:\Users\123\Downloads\FB-management\FB-management\Referee\includes\sidebar.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../FB-management/assets/style.css">
-    <!-- <link rel="stylesheet" href="../styles/style.css"> -->
+    <link rel="stylesheet" href="/FB-management/assets/style.css">
 </head>
 
 
 <body>
-    <?php include 'sidebar.php'; ?>
-
+    
     <section class="content">
         <header>
             <h1>Dashboard</h1>
@@ -104,7 +104,7 @@
                                 </thead> -->
                                 <tbody>
                                     <tr>
-                                       <td>Subitted Match Results</td>
+                                       <td>Submitted Match Results</td>
                                     </tr>
                                     <tr>
                                         <td>Recent Assignemts and Reports Field</td>
