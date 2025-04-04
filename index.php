@@ -12,8 +12,9 @@
     <button type="submit" value="submit">Sign up</button>
 </form>
 </div>
+
 <style>
-        form {
+form {
     font-family: Arial, sans-serif;
     text-align: center;
 }
@@ -29,6 +30,7 @@ input {
     width: 700px;
     border: 2px solid black;
     border-radius: 10px;
+    font-size: 1rem;
 }
 
 button {
@@ -44,6 +46,9 @@ button {
     -webkit-border-radius: 5px;
     border-radius: 5px;
     border-color: solid black;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 150px;
 }
 
 body,
