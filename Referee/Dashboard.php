@@ -13,6 +13,8 @@ if (!isset($_SESSION['user_id'])) {
     <title>Dashboard</title>
     <link rel="stylesheet" href="/match_management/assets/css/style.css">
 </head>
+
+
 <body>
     <?php include '../includes/sidebar.php'; ?>
 

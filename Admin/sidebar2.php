@@ -1,23 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Manager</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Admin</title>
     <style>
-        #chartContainer {
-            width: 50%; 
-            margin: 0 auto; 
-            padding-top: 20px; 
-        }
-
-        #StatsChart a{
-            width: 100% !important; 
-            height: 400px;          
-        }
-
+ 
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -25,6 +13,9 @@
             display: flex;
             height: 100vh;
         }
+
+
+
 
         .sidebar {
             width: 250px;
@@ -38,16 +29,19 @@
             padding-left: 10px;
         }
 
+
         .sidebar h2 {
             color: #ecf0f1;
             font-size: 24px;
             margin-bottom: 30px;
         }
 
+
         .sidebar ul {
             list-style: none;
             padding: 0;
         }
+
 
         .sidebar ul li {
             padding: 15px;
@@ -57,15 +51,22 @@
             cursor: pointer;
         }
 
+
         .sidebar ul li:hover {
-            background-color: rgb(32, 88, 129);
+            background-color:rgb(32, 88, 129);
         }
+
+
+
 
         .content {
             margin-left: 250px;
             padding: 20px;
             width: 100%;
         }
+
+
+
 
         .content header {
             background-color: #ecf0f1;
@@ -74,54 +75,33 @@
             margin-bottom: 20px;
         }
 
+
         .content header h1 {
             margin: 0;
         }
 
-        a {
-            color: white;
-            text-decoration: none;
-        }
+
     </style>
 </head>
 <body>
-    <?php include 'sidebar.php'; ?>
+    <div class="sidebar">
+        <h2>Admin</h2>
+        <ul>
+            <li><a href="AdminDashboard.php">Dashboard</li>
+            <li><a href="AdminUsers.php">Users</li>
+            <li><a href="AdminTeams.php">Teams</li>
+            <li><a href="AdminMatches.php">Matches</li>
+            <li><a href="AdminReports.php">Reports</li>
+            <li><a href="AdminSettings.php">Settings</li>
+        </ul>
+    </div>
+
 
     <div class="content">
         <header>
-            <h1>Team Dashboard</h1>
+            <h1>Admin
+            </h1>
         </header>
     </div>
-    <div id="chartContainer">
-        <canvas id="occupancyChart"></canvas>
-    </div>
-<<<<<<< HEAD
-
-    <script>
-        var occupiedRooms = <?php echo $occupiedRooms; ?>;
-        var emptyRooms = <?php echo $emptyRooms; ?>;
-
-        var ctx = document.getElementById('occupancyChart').getContext('2d');
-        var occupancyChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ['Occupied Rooms', 'Empty Rooms'],
-                datasets: [{
-                    label: 'Room Occupancy',
-                    data: [occupiedRooms, emptyRooms], 
-                    backgroundColor: ['#ff9999', '#66b3ff'],
-                    hoverOffset: 4
-                }]
-            },
-            options: {
-                responsive: true, 
-                maintainAspectRatio: false 
-            }
-        });
-    </script>
-
-=======
->>>>>>> 66ad8da488ecad90cd3939de0324a682031dc610
 </body>
-
 </html>
