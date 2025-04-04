@@ -11,7 +11,7 @@
     <?php include 'Sidebar.php'; ?>
     <div class="content">
         <header>
-            <h1>Notifications</h1>
+            <h1>Notifications practice</h1>
         </header>
     </div>
 </body>
