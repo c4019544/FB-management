@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="/FB-management/assets/style.css">
+    <link rel="stylesheet" href="/FB-management/assets/Rstyle.css">
 </head>
 
 
@@ -104,7 +104,7 @@
                                 </thead> -->
                                 <tbody>
                                     <tr>
-                                       <td>Subitted Match Results</td>
+                                       <td>Submitted Match Results</td>
                                     </tr>
                                     <tr>
                                         <td>Recent Assignemts and Reports Field</td>
