@@ -8,5 +8,5 @@
 
 <body>
     <?php
-        include("sidebar.php");    
+        include("sidebar2.php");    
     ?>
