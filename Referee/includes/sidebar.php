@@ -1,12 +1,12 @@
 <?php
 // session_start();
-if (!isset($_SESSION["user_id"])) {
-    header("Location: ../login.php");
-    exit();
-}
+// if (!isset($_SESSION["user_id"])) {
+//     header("Location: ../login.php");
+//     exit();
+// }
 ?>
 <div class="sidebar">
-    <h2>Team Manager</h2>
+    <h2>Referee</h2>
     <ul>
         <li><a href="../pages/Dashboard.php">Dashboard</a></li>
 

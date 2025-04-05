@@ -1,9 +1,9 @@
 <?php
-session_start();
-if (!isset($_SESSION['user_id'])) {
-header("Location: ../login.php");
-exit();
-}
+// session_start();
+// if (!isset($_SESSION['user_id'])) {
+// header("Location: ../login.php");
+// exit();
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,7 @@ exit();
     <header>
         <h1>Disciplinary Action</h1>
     </header>
-    <p>Welcome to the Match Management System. - Disciplinary Action</p>
+    <p>Welcome to the Football Management System. - Disciplinary Action</p>
 </div>
 </body>
 </html>
