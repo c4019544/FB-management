@@ -53,6 +53,7 @@ echo json_encode($events);
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.js'></script>
 </head>
 <style>
+<<<<<<< Updated upstream
 #upcoming-matches-section{
     margin-left: 20px;
 }
@@ -70,6 +71,27 @@ echo json_encode($events);
 
 #upcoming-match-table tr td{
     padding: 10px 20px;
+=======
+.matches-section{
+    margin: 20px;
+}
+
+#match-calendar-table{
+    border: 1px solid black;
+    border-radius: 15%;
+    border-collapse: collapse;
+}
+
+#match-calendar-table tr th{
+    color:#ffffff;
+    background-color:rgb(48, 60, 86);
+    padding: 10px 40px;
+}
+
+#match-calendar-table tr td{
+    border: 1px solid black;
+    padding: 10px 40px;
+>>>>>>> Stashed changes
 }
 </style>
 
@@ -81,9 +103,15 @@ echo json_encode($events);
             <h1>Match Calendar</h1>
         </header>
 
+<<<<<<< Updated upstream
         <section id="upcoming-matches-section">
             <h2>Upcoming Matches</h2>
             <table id="upcoming-match-table">
+=======
+        <section class="matches-section">
+            <h2>Upcoming Matches</h2>
+            <table id="match-calendar-table">
+>>>>>>> Stashed changes
                 <tr>
                     <th>Teams</th>
                     <th>Date</th>
@@ -97,10 +125,13 @@ echo json_encode($events);
             </table>
         </section>
         
+<<<<<<< Updated upstream
 
         <section id="calendar-section">
             <div id='calendar'></div>
         </section>
+=======
+>>>>>>> Stashed changes
     </div>
 
 </body>
