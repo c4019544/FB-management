@@ -11,24 +11,13 @@
     <div class="sidebar">
         <h2>Admin</h2>
         <ul>
-            <li><a href="AdminDashboard.php">Dashboard</li>
-            <li><a href="AdminUsers.php">Users</li>
-            <li><a href="AdminTeams.php">Teams</li>
-            <li><a href="AdminMatches.php">Matches</li>
-            <li><a href="AdminReports.php">Reports</li>
-            <li><a href="AdminSettings.php">Settings</li>
+            <li><a href="AdminDashboard.php">Dashboard</a></li>
+            <li><a href="AdminUsers.php">Users</a></li>
+            <li><a href="AdminTeams.php">Teams</a></li>
+            <li><a href="AdminMatches.php">Matches</a></li>
+            <li><a href="AdminReports.php">Reports</a></li>
+            <li><a href="AdminSettings.php">Settings</a></li>
         </ul>
     </div>
-
-<<<<<<< HEAD:Admin/sidebar2.php
-
-    <div class="content">
-        <header>
-            <h1>Admin
-            </h1>
-        </header>
-    </div>
-=======
->>>>>>> e250f2716ee3282f526e852f4c8d2b5bf6e83c81:Admin/sidebar.php
 </body>
 </html>

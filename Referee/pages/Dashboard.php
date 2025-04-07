@@ -1,22 +1,26 @@
-<?php include ("C:\Users\123\Downloads\FB-management\FB-management\Referee\includes\sidebar.php"); ?>
-
+<?php
+//  session_start();
+// if (!isset($_SESSION['user_id'])) {
+//     header("Location: login.php");
+//     exit();
+// }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="/FB-management/assets/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-
-
 <body>
-    
+    <?php include '../includes/sidebar.php'; ?>
+
     <section class="content">
         <header>
             <h1>Dashboard</h1>
         </header>
-        <!-- <p>Welcome to the FB Management System.</p> -->
+        <!-- <p>Welcome to the Match Management System.</p> -->
         <div class="card-section">
             <div class="flex">
                 <div class="upper-left-card">
@@ -49,7 +53,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <a class="custom-button" href="/FB-management/pages/ViewMatchHistory.php">View Match Details</a>
+                        <a class="custom-button" href="ViewMatchHistory.php">View Match Details</a>
                     </div>
                 </div>
 
@@ -104,7 +108,7 @@
                                 </thead> -->
                                 <tbody>
                                     <tr>
-                                       <td>Submitted Match Results</td>
+                                       <td>Subitted Match Results</td>
                                     </tr>
                                     <tr>
                                         <td>Recent Assignemts and Reports Field</td>
