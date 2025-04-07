@@ -1,5 +1,5 @@
 <?php
-$database = new SQLite3('C:\xampp\htdocs\Group\FB-management\FB-management-1\fb_managment_system.db');
+$database = new SQLite3('../fb_managment_system.db');
 
 $query = "SELECT  t1.team_name AS team1, t2.team_name AS team2, m.Match_Date 
           FROM match m
