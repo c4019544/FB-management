@@ -7,6 +7,14 @@
 </head>
 
 <body>
+<div class="content">
+    <header>
+        <h1>Users</h1>
+    </header>
+</div>
     <?php
         include("sidebar2.php");    
     ?>
+
+    <div>
+        
