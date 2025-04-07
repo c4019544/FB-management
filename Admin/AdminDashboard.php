@@ -7,6 +7,11 @@
 </head>
 
 <body>
+<div class="content">
+        <header>
+            <h1>Dashboard</h1>
+        </header>
+    </div>
     <?php
         include("sidebar2.php");    
     ?>
@@ -94,13 +99,14 @@
 }
 
 .content {
-    margin-left: 1000px;
+    margin-left: 100px;
     padding: 20px;
     width: 100%;
+    color: white;
 }
 
 .content header {
-    background-color: #ecf0f1;
+    background-color:rgb(32, 88, 129);
     padding: 20px;
     text-align: center;
     margin-bottom: 20px;
@@ -120,6 +126,7 @@ a {
     padding: 20px;
     width: calc(100% - 270px);
     position: relative;
+    z-index: 2;
 }
 
 table {
