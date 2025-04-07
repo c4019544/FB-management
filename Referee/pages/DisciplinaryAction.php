@@ -5,6 +5,20 @@
 // exit();
 // }
 ?>
+
+<?php
+$database = new SQLite3('C:\xampp\htdocs\FB-management\fb_managment_system.db');
+
+$query = "SELECT Message_ID, Sender_ID, Receiver_ID, Date_Time, Text_Message FROM Message ORDER BY Date_Time DESC";
+$results = $database->query($query);
+
+if (!$results) {
+    die("Query failed: " . $database->lastErrorMsg());
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
