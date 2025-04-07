@@ -1,5 +1,8 @@
 <div class="sidebar">
     <h2>Team Manager</h2>
+    <div class="profile-header">
+        <img src="../Profile/PFP.jpg" alt="Profile Picture" class="profile-pic">
+    </div>
     <ul>
         <li><a href="TeamManager.php">Dashboard</a></li>
         <li><a href="TeamRoster.php">Team Roster</a></li>
