@@ -14,7 +14,6 @@ if (!$results) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,14 +42,93 @@ if (!$results) {
 
 #upcoming-match-table tr td{
     padding: 10px 20px;
+    color:#535252;
 }
 
 #calendar{
-    background-color:#a2b7c9;
-    width: 1050px;
+    background-color: #a2b7c9;
+    width: auto;
     height: auto;
     margin: 20px;
-    border: 1px solid black;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+/* the month/yr of the calendar */
+.fc-toolbar h2 { 
+    color:#363e4e; 
+    padding-left: 10px;
+}
+
+ /* Color of the days of the week (Monday, Tuesday, etc.) */
+.fc-day-header {
+    font-weight: bold; 
+    background-color: black !important;
+    color: white;
+}
+
+/* Change the color of the dates */
+.fc-day{
+    color: #000000 !important; /* Change this for text color */
+}
+
+/* Change the background color of today's date */
+.fc-day.fc-day-today {
+    background-color:#61727a !important; /* background for today's date */
+}
+
+.fc-day:hover {
+    background-color: #ab5757; /* background on hover */
+    color:rgb(185, 181, 181);
+    cursor: pointer;
+}
+
+
+/* footer */
+.footer {
+    position: fixed;
+    left: 250px;
+    bottom: 0;
+    width: calc(100% - 250px);
+    background-color: #153C57;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    z-index: 99;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.footer p {
+    margin: 0;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #4CAF50;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+    
+    .footer {
+        left: 200px;
+        width: calc(100% - 200px);
+    }
 }
 </style>
 
@@ -78,13 +156,18 @@ if (!$results) {
             </table>
         </section>
         
-
+        <!-- calendar API -->
         <section id="calendar">
         </section>
         <br>
-        
     </div>
 
+    <footer class="footer">
+        <p>goikontech@gmail.com</p>
+        <a href="#">Terms of use</a>
+        <a href="#">Support</a>
+        <a href="#">Policies</a>
+    </footer>
 </body>
 </html>
 
@@ -96,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
         initialView: 'dayGridMonth',
         height: 'auto',
         events: '../TeamManager/GetMatches.php', // Path to your PHP endpoint
-        eventColor: '#b0e5b0',
+        eventColor: ' #f2f0b4',
         eventTextColor: ' #000000'
     });
     calendar.render();
