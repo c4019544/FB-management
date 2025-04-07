@@ -14,32 +14,6 @@ if (!$results) {
 }
 ?>
 
-<?php
-// get_matches.php
-header('Content-Type: application/json');
-
-$database = new SQLite3('../fb_managment_system.db');
-
-$query = "SELECT t1.team_name AS team1, t2.team_name AS team2, m.Match_Date 
-          FROM match m
-          JOIN team t1 ON m.TeamA_ID = t1.team_id
-          JOIN team t2 ON m.TeamB_ID = t2.team_id
-          WHERE m.Match_Date >= DATE('now')";
-
-$results = $database->query($query);
-
-$events = [];
-
-while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
-    $events[] = [
-        'title' => $row['team1'] . " vs " . $row['team2'],
-        'start' => $row['Match_Date']
-    ];
-}
-
-echo json_encode($events);
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,11 +23,9 @@ echo json_encode($events);
     <title>Match Calendar</title>
     <link rel="stylesheet" href="../styles/style.css">
     <!-- Link to Calendar API/ FullCalendar -->
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.css' rel='stylesheet' />
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js'></script>
 </head>
 <style>
-<<<<<<< Updated upstream
 #upcoming-matches-section{
     margin-left: 20px;
 }
@@ -71,27 +43,14 @@ echo json_encode($events);
 
 #upcoming-match-table tr td{
     padding: 10px 20px;
-=======
-.matches-section{
+}
+
+#calendar{
+    background-color:#a2b7c9;
+    width: 1050px;
+    height: auto;
     margin: 20px;
-}
-
-#match-calendar-table{
     border: 1px solid black;
-    border-radius: 15%;
-    border-collapse: collapse;
-}
-
-#match-calendar-table tr th{
-    color:#ffffff;
-    background-color:rgb(48, 60, 86);
-    padding: 10px 40px;
-}
-
-#match-calendar-table tr td{
-    border: 1px solid black;
-    padding: 10px 40px;
->>>>>>> Stashed changes
 }
 </style>
 
@@ -103,15 +62,9 @@ echo json_encode($events);
             <h1>Match Calendar</h1>
         </header>
 
-<<<<<<< Updated upstream
         <section id="upcoming-matches-section">
             <h2>Upcoming Matches</h2>
             <table id="upcoming-match-table">
-=======
-        <section class="matches-section">
-            <h2>Upcoming Matches</h2>
-            <table id="match-calendar-table">
->>>>>>> Stashed changes
                 <tr>
                     <th>Teams</th>
                     <th>Date</th>
@@ -125,13 +78,11 @@ echo json_encode($events);
             </table>
         </section>
         
-<<<<<<< Updated upstream
 
-        <section id="calendar-section">
-            <div id='calendar'></div>
+        <section id="calendar">
         </section>
-=======
->>>>>>> Stashed changes
+        <br>
+        
     </div>
 
 </body>
@@ -139,15 +90,15 @@ echo json_encode($events);
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            height: 'auto',
-            events: '../TeamManager/get_matches.php', // Path to your PHP endpoint
-            eventColor: '#30405a',
-            eventTextColor: '#fff'
-        });
-        calendar.render();
+document.addEventListener('DOMContentLoaded', function () {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        height: 'auto',
+        events: '../TeamManager/GetMatches.php', // Path to your PHP endpoint
+        eventColor: '#b0e5b0',
+        eventTextColor: ' #000000'
     });
+    calendar.render();
+});
 </script>
