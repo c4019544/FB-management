@@ -19,5 +19,16 @@
             <li><a href="AdminSettings.php">Settings</li>
         </ul>
     </div>
+<<<<<<< HEAD
+=======
+
+
+    <div class="content">
+        <header>
+            <h1>Admin
+            </h1>
+        </header>
+    </div>
+>>>>>>> 756f100a1c2ac2ddc75057a8d1c7033e80adab29
 </body>
 </html>
