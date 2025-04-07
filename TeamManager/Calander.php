@@ -14,6 +14,33 @@ if (!$results) {
 }
 ?>
 
+<?php
+// get_matches.php
+header('Content-Type: application/json');
+
+$database = new SQLite3('../fb_managment_system.db');
+
+$query = "SELECT t1.team_name AS team1, t2.team_name AS team2, m.Match_Date 
+          FROM match m
+          JOIN team t1 ON m.TeamA_ID = t1.team_id
+          JOIN team t2 ON m.TeamB_ID = t2.team_id
+          WHERE m.Match_Date >= DATE('now')";
+
+$results = $database->query($query);
+
+$events = [];
+
+while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
+    $events[] = [
+        'title' => $row['team1'] . " vs " . $row['team2'],
+        'start' => $row['Match_Date']
+    ];
+}
+
+echo json_encode($events);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +51,6 @@ if (!$results) {
     <!-- Link to Calendar API/ FullCalendar -->
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.css' rel='stylesheet' />
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.js'></script>
-
 </head>
 <style>
 #upcoming-matches-section{
@@ -71,7 +97,26 @@ if (!$results) {
             </table>
         </section>
         
+
+        <section id="calendar-section">
+            <div id='calendar'></div>
+        </section>
     </div>
 
 </body>
 </html>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            height: 'auto',
+            events: '../TeamManager/get_matches.php', // Path to your PHP endpoint
+            eventColor: '#30405a',
+            eventTextColor: '#fff'
+        });
+        calendar.render();
+    });
+</script>
