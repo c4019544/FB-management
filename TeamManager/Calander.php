@@ -29,6 +29,11 @@ if (!$results) {
         <header>
             <h1>Match Calendar</h1>
         </header>
+
+        <!-- calendar API -->
+        <section id="calendar">
+        </section>
+
         <h2>Upcoming Matches</h2>
         <table>
             <tr>
@@ -52,7 +57,62 @@ if (!$results) {
   </footer>
 
 </body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        height: 'auto',
+        events: '../TeamManager/GetMatches.php', // Path to your PHP endpoint
+        eventColor: ' #f2f0b4',
+        eventTextColor: ' #000000'
+    });
+    calendar.render();
+});
+</script>
+
+
+
 <style>
+#calendar{
+    background-color: #a2b7c9;
+    width: auto;
+    height: auto;
+    margin: 0 70px;
+    border: 2px solid black;
+    padding: 50px;
+    position: relative;
+}
+
+/* the month/yr of the calendar */
+.fc-toolbar h2 { 
+    color:#363e4e; 
+    padding-left: 10px;
+}
+
+ /* Color of the days of the week (Monday, Tuesday, etc.) */
+.fc-day-header {
+    font-weight: bold; 
+    background-color: black !important;
+    color: white;
+}
+
+/* Change the color of the dates */
+.fc-day{
+    background-color: #2d4458;
+}
+
+/* Change the background color of today's date */
+.fc-day-today {
+    background-color:#61727a !important; /* background for today's date */
+}
+
+.fc-day:hover {
+    background-color: #ab5757; /* background on hover */
+    color:rgb(185, 181, 181);
+    cursor: pointer;
+}
+
 
 .footer {
     position: fixed;
