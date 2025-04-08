@@ -155,19 +155,19 @@
                 $playerID = $_POST['playerID'];
                 $position = SQLite3::escapeString($_POST['position']);
 
-                // Escape playerID for safety and add quotes
+                
                 $playerID = SQLite3::escapeString($playerID); 
-                $updateQuery = "UPDATE Player SET Position = '$position' WHERE Player_ID = '$playerID'"; // Added quotes around playerID
+                $updateQuery = "UPDATE Player SET Position = '$position' WHERE Player_ID = '$playerID'"; 
                 $updateResult = $database->exec($updateQuery);
 
                 if ($updateResult) {
                     echo "<div class='success-message'>Position updated successfully!</div>";
 
-                    // Query to fetch updated player info
+                    
                     $infoQuery = "SELECT Users.First_name, Users.Last_name, Player.Position
                                   FROM Player
                                   JOIN Users ON Player.Player_ID = Users.User_ID
-                                  WHERE Player.Player_ID = '$playerID'"; // Added quotes around playerID
+                                  WHERE Player.Player_ID = '$playerID'"; 
                     $infoResult = $database->querySingle($infoQuery, true);
 
                     if ($infoResult) {
@@ -185,14 +185,12 @@
             if (isset($_POST['playerID']) || isset($_GET['playerID'])) {
                 $playerID = isset($_POST['playerID']) ? $_POST['playerID'] : $_GET['playerID'];
 
-                // Ensure playerID is treated as a string with quotes
                 $playerID = SQLite3::escapeString($playerID);
 
-                // Query to fetch selected player details
                 $query = "SELECT Player.Player_ID, Users.First_name, Users.Last_name, Player.Position
                           FROM Player
                           JOIN Users ON Player.Player_ID = Users.User_ID
-                          WHERE Player.Player_ID = '$playerID'"; // Added quotes around playerID
+                          WHERE Player.Player_ID = '$playerID'";
 
                 $selectedPlayer = $database->querySingle($query, true);
 
@@ -207,7 +205,6 @@
                 <select name="playerID" id="player" required>
                     <option value="">-- Select a Player --</option>
                     <?php
-                    // Query to fetch all players
                     $query = "SELECT Player.Player_ID, Users.First_name, Users.Last_name, Player.Position
                               FROM Player
                               JOIN Users ON Player.Player_ID = Users.User_ID
@@ -215,7 +212,6 @@
 
                     $result = $database->query($query);
 
-                    // Display players in dropdown
                     while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
                         $selected = (isset($selectedPlayer) && $selectedPlayer['Player_ID'] == $row['Player_ID']) ? 'selected' : '';
                         echo "<option value='{$row['Player_ID']}' $selected>
