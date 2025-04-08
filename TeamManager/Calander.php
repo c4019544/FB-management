@@ -60,6 +60,7 @@ if (!$results) {
         <a href="#">Policies</a>
     </footer>
 </body>
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
@@ -116,6 +117,26 @@ document.addEventListener('DOMContentLoaded', function () {
     cursor: pointer;
 }
 
+
+#upcoming-matches-section{
+    margin-left: 20px;
+}
+
+#upcoming-match-table{
+    border: 2px solid black;
+    border-collapse: separate;
+}
+
+#upcoming-match-table tr th{
+    color: white;
+    background-color:#2d4458;
+    padding: 10px 20px;
+}
+
+#upcoming-match-table tr td{
+    padding: 10px 20px;
+    color:#535252;
+}
 
 .footer {
     position: fixed;
