@@ -77,3 +77,9 @@
         $db3->close();
         ?>
     </div>
+    
+    <div>
+        <a href="AdminCreateUserPage.php">
+            <button>Add New User</button>
+        </a>
+    </div>
