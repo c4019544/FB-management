@@ -35,7 +35,7 @@ if (!$results) {
         <section id="calendar">
         </section>
 
-        <section id="upcoming-matches-section">
+        <!-- <section id="upcoming-matches-section">
             <h2>Upcoming Matches</h2>
             <table id="upcoming-match-table">
                 <tr>
@@ -49,17 +49,18 @@ if (!$results) {
                 </tr>
                 <?php endwhile; ?>
             </table>
-        </section>
-        <br>
+        </section> -->
     </div>
-
-    <footer class="footer">
+    <br>                
+    <footer>
         <p>goikontech@gmail.com</p>
         <a href="#">Terms of use</a>
         <a href="#">Support</a>
         <a href="#">Policies</a>
     </footer>
 </body>
+</html>
+
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -82,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     background-color: #a2b7c9;
     width: auto;
     height: auto;
-    margin: 0 70px;
+    margin: 20px 70px;
     border: 2px solid black;
     padding: 50px;
     position: relative;
@@ -138,50 +139,5 @@ document.addEventListener('DOMContentLoaded', function () {
     color:#535252;
 }
 
-.footer {
-    position: fixed;
-    left: 250px;
-    bottom: 0;
-    width: calc(100% - 250px);
-    background-color: #153C57;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    z-index: 99;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-}
-
-.footer p {
-    margin: 0;
-    display: inline-block;
-    margin-right: 15px;
-}
-
-.footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s;
-}
-
-.footer a:hover {
-    color: #4CAF50;
-}
-
-@media (max-width: 768px) {
-    .sidebar {
-        width: 200px;
-    }
-    
-    .content {
-        margin-left: 200px;
-        width: calc(100% - 200px);
-    }
-    
-    .footer {
-        left: 200px;
-        width: calc(100% - 200px);
-    }
-}
-
+</style>
 
