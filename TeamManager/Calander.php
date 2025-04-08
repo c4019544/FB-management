@@ -24,71 +24,6 @@ if (!$results) {
     <!-- Link to Calendar API/ FullCalendar -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js'></script>
 </head>
-<style>
-#calendar{
-    background-color: #a2b7c9;
-    width: auto;
-    height: auto;
-    margin: 0 70px;
-    border: 2px solid black;
-    padding: 50px;
-    position: relative;
-}
-
-/* the month/yr of the calendar */
-.fc-toolbar h2 { 
-    color:#363e4e; 
-    padding-left: 10px;
-}
-
- /* Color of the days of the week (Monday, Tuesday, etc.) */
-.fc-day-header {
-    font-weight: bold; 
-    background-color: black !important;
-    color: white;
-}
-
-/* Change the color of the dates */
-.fc-day{
-    background-color: #2d4458;
-}
-
-/* Change the background color of today's date */
-.fc-day-today {
-    background-color:#61727a !important; /* background for today's date */
-}
-
-.fc-day:hover {
-    background-color: #ab5757; /* background on hover */
-    color:rgb(185, 181, 181);
-    cursor: pointer;
-}
-
-
-#upcoming-matches-section{
-    margin-left: 20px;
-}
-
-#upcoming-match-table{
-    border: 2px solid black;
-    border-collapse: separate;
-}
-
-#upcoming-match-table tr th{
-    color: white;
-    background-color:#2d4458;
-    padding: 10px 20px;
-}
-
-#upcoming-match-table tr td{
-    padding: 10px 20px;
-    color:#535252;
-}
-
-</style>
-
-
-
 
 <body>
     <?php include 'sidebar.php'; ?>
@@ -229,16 +164,3 @@ document.addEventListener('DOMContentLoaded', function () {
 }
 
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        height: 'auto',
-        events: '../TeamManager/GetMatches.php', // Path to your PHP endpoint
-        eventColor: ' #f2f0b4',
-        eventTextColor: ' #000000'
-    });
-    calendar.render();
-});
-</script>
