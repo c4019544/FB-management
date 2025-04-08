@@ -14,7 +14,7 @@ if (!$results) {
 }
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html>s
 <html lang="en">
 <head>
     <meta charset="UTF-8">
