@@ -19,7 +19,7 @@
 
     <div>
         <?php
-        $db = new SQLite3('C:\Users\jamie\OneDrive\Documents\xampp\htdocs\FB-management\fb_managment_system.db');
+        $db = new SQLite3('../fb_managment_system.db');
         $query = "SELECT COUNT (*) as total_users FROM Users";
         $result = $db->querySingle($query, true);
         

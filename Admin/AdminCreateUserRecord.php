@@ -13,7 +13,7 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST") {
     $gender = $_POST['gender'];
     $password = $_POST['password'];
 
-    $db = new SQLite3('C:\Users\jamie\OneDrive\Documents\xampp\htdocs\FB-management\fb_managment_system.db');
+    $db = new SQLite3('../fb_managment_system.db');
 
     $db->exec("CREATE TABLE IF NOT EXISTS Users (
         User_ID TEXT NOT NULL PRIMARY KEY,

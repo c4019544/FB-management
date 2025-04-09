@@ -208,3 +208,27 @@ a {
     color: white;
     text-decoration: none;
 }
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: skyblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: black;
+  }
+
+  button:hover {
+    background-color: lightgray;
+    color: black;
+  }
+
+  input[type="text"], input[type="number"], input[type="date"], input[type="email"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
