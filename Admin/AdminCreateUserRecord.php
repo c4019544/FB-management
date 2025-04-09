@@ -48,12 +48,12 @@ if ($stmt->execute()) {
 $select_query = "SELECT * FROM Users";
 $result = $db->query($select_query);
 echo"All Users <br>";
-echo"--------------------------------------------------<br>";
+echo"----------------------------------------------------------------------------------------------------<br>";
 
 while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
     echo $row['User_ID'] . " " . $row['First_name'] . " " . $row['Last_name'] . " " . $row['Dob'] . " " . $row['Email_Address'] . " " . $row['TelNo'] . " " . $row['Role'] . " " . $row['Gender'] . " " . $row['Password']."<br>";
 }
-echo"--------------------------------------------------<br>";
+echo"----------------------------------------------------------------------------------------------------<br>";
 }
 $db->close();
 ?>
