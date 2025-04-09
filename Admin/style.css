@@ -261,3 +261,10 @@ button:hover {
     border-radius: 5px;
     border-left: 4px solid #4CAF50;
 }
+
+main {
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 1 auto;
+}
