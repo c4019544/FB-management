@@ -34,7 +34,7 @@
 
     <div>
         <?php
-        $db2 = new SQLite3('C:\Users\jamie\OneDrive\Documents\xampp\htdocs\FB-management\fb_managment_system.db');
+        $db2 = new SQLite3('../fb_managment_system.db');
         $query2 = "SELECT COUNT (*) as total_teams FROM Team";
         $result2 = $db2->querySingle($query2, true);
 
@@ -49,7 +49,7 @@
 
     <div>
         <?php
-        $db3 = new SQLite3('C:\Users\jamie\OneDrive\Documents\xampp\htdocs\FB-management\fb_managment_system.db');
+        $db3 = new SQLite3('../fb_managment_system.db');
         $query3 = "SELECT t1.team_name AS home_team, t2.team_name AS away_team, f.date From Fixtures f
                             JOIN Team t1 ON f.home_team_id = t1.Team_ID
                             Join Team t2 ON f.away_team_id = t2.Team_ID
@@ -82,5 +82,11 @@
     <div>
         <a href="AdminCreateUserPage.php">
             <button>Add New User</button>
+        </a>
+    </div>
+
+    <div>
+        <a href="AdminCreateFixturePage.php">
+            <button>Create New Fixture</button>
         </a>
     </div>
