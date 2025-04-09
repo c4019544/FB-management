@@ -223,6 +223,7 @@ input[type="text"], input[type="number"], input[type="date"], input[type="email"
     border-radius: 10px;
     max-width: 600px;
     margin: 0 auto;
+    margin-left: 300px;
 }
 
 label {
@@ -266,5 +267,5 @@ main {
     padding: 20px;
     border-radius: 10px;
     max-width: 600px;
-    margin: 1 auto;
+    margin: 0 auto;
 }

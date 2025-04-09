@@ -17,7 +17,7 @@
         include("sidebar2.php");    
     ?>
 
-    <div>
+    <div class="active_users">
         <?php
         $db = new SQLite3('../fb_managment_system.db');
         $query = "SELECT COUNT (*) as total_users FROM Users";

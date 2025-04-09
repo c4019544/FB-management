@@ -13,7 +13,7 @@
     include("sidebar2.php");
     ?>
     <div> <h2 class="centered_header">Create New Fixture</h2></div>
-
+    <div>
     <div class="main">
         <form action="AdminCreateFixtureRecord.php" method="post">
             <input type="text" id="fixtureDate" placeholder="Fixture Date" required>
@@ -51,5 +51,6 @@
             <button type="submit">Create Fixture</button>
         </form>
     </div>
+        </div>
 </body>
 </html>
