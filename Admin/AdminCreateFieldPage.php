@@ -12,7 +12,7 @@
     <?php
     include("sidebar2.php");
     ?>
-    <div> <h2 class="centered_header">Add New Field/Owner</h2></div>
+    <div> <h2 class="centered_header">Add New Field</h2></div>
 
     <div class="main">
         <form action="AdminCreateFieldRecord.php" method="post">
@@ -24,14 +24,13 @@
             <input type="text" id="city" name="city" placeholder="City" required>
             <input type="text" id="country" name="country" placeholder="Country" required>
             <input type="text" id="postcode" name="postcode" placeholder="Postcode" required>
-            <input type="text" id="field_name" name="field_name" placeholder="Field Name" required>
             <input type="text" id="glt" name="glt" placeholder="GLT" required>
             <input type="text" id="var" name="var" placeholder="VAR" required>
             <input type="number" id="viewScreens" name="viewScreens" placeholder="View Screens" required>
             <input type="text" id="pressBox" name="pressBox" placeholder="Press Box" required>
-            <input type="text" id="chgHour" name="chgHour" placeholder="Charge Per Hour" required>
+            <input type="number" id="chgHour" name="chgHour" min="50.0" max="300" step="0.01" placeholder="Charge Per Hour" required>
 
-            <button type="submit">Add Field/Owner</button>
+            <button type="submit">Add Field</button>
         </form>
     </div>
 </body>
