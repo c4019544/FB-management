@@ -23,13 +23,13 @@
 <body>
     <?php include 'Sidebar.php'; ?>
 
-<!--        
+       
     <div class="content">
         <header>
             <h1>Field Owner Dashboard</h1>
         </header>
     </div>
-    -->
+   
     <script>
         var mySidebar = document.querySelector('Sidebar')
         var sidebar = new coreui.Sidebar(mySidebar)
