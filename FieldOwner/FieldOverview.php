@@ -29,17 +29,35 @@
                             <div class="table-responsive table-scroll field-table" data-mdb-perfect-scrollbar="true" style="position: relative;">
 
                             <?php
-                                // Connect to the SQLite database
-                                $db = new SQLite3(filename: '../fb_managment_system.db');
+                                session_start();
 
-                                // Query to get data from a table
-                                $query = 'SELECT Field_name, Field_Capacity, Address_Line1 || ", " || City || ", " || Country || ", " || Postcode as "Address", GLT, VAR, View_Screens, Press_Box, Chg_Hour FROM Field WHERE FieldOwner_ID="FEO002"'; // Replace 'your_table' with the name of your table
-                                $result = $db->query($query);
+                                if (!isset($_SESSION['email'])) {
+                                    header("Location: index.php");
+                                    exit();
+                                }
+
+                                $email = $_SESSION['email'];
+
+                                $db = new SQLite3('../fb_managment_system.db');
+
+                                $stmt = $db->prepare('
+                                    SELECT Field_name, Field_Capacity, 
+                                        Address_Line1 || ", " || City || ", " || Country || ", " || Postcode as Address, 
+                                        GLT, VAR, View_Screens, Press_Box, Chg_Hour
+                                    FROM Field
+                                    INNER JOIN Users ON Field.FieldOwner_ID = Users.User_ID
+                                    WHERE Users.Email_Address = :email
+                                ');
+
+                                $stmt->bindValue(':email', $email, SQLITE3_TEXT);
+                                $result = $stmt->execute();
+
+                                
 
                                 if (!$result) {
                                     echo "Error fetching data.";
                                 } else {
-                                    // Start the HTML table
+                                    
                                     echo "<table class='table table-striped mb-0'>
                                 <thead style='background-color: #002d72;'>
                                     <tr>
