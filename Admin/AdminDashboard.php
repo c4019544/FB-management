@@ -86,7 +86,7 @@
     </div>
 
     <div>
-        <a href="AdminCreateFixturePage.php">
-            <button>Create New Fixture</button>
+        <a href="AdminCreateFieldPage.php">
+            <button>Add New Field</button>
         </a>
     </div>
