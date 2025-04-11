@@ -10,7 +10,7 @@
 
 <body>
     <?php
-    include("sidebar2.php");
+    include ("sidebar2.php");
     ?>
     <div> <h2 class="centered_header">Add New Field</h2></div>
 
@@ -28,7 +28,7 @@
             <input type="text" id="var" name="var" placeholder="VAR" required>
             <input type="number" id="viewScreens" name="viewScreens" placeholder="View Screens" required>
             <input type="text" id="pressBox" name="pressBox" placeholder="Press Box" required>
-            <input type="number" id="chgHour" name="chgHour" min="50.0" max="300" step="0.01" placeholder="Charge Per Hour" required>
+            <input type="number" id="chgHour" name="chgHour" min="50.0" max="1000" step="0.01" placeholder="Charge Per Hour" required>
 
             <button type="submit">Add Field</button>
         </form>

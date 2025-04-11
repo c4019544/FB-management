@@ -19,5 +19,10 @@
             <li><a href="AdminSettings.php">Settings</a></li>
         </ul>
     </div>
+
+    <div class="content">
+        <header>
+            <h1>Welcome Admin</h1>
+        </header>
 </body>
 </html>

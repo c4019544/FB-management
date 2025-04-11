@@ -1,6 +1,6 @@
 <?php
 
-include("sidebar2.php");
+include ("sidebar2.php");
 
 if ($_SERVER ["REQUEST_METHOD"] == "POST") {
     $field_id = $_POST['field_id'];
@@ -19,7 +19,7 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST") {
 
     $db = new SQLite3('../fb_managment_system.db');
 
-    $db->exec("CREATE NEW TABLE IF NOT EXISTS Field(
+    $db->exec("CREATE TABLE IF NOT EXISTS Field(
         Field_ID TEXT NOT NULL PRIMARY KEY,
         Field_name TEXT NOT NULL,
         FieldOwner_ID TEXT NOT NULL,
@@ -36,7 +36,7 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST") {
         FOREIGN KEY (FieldOwner_ID) REFERENCES User(User_ID)
         );");
 
-$stmt = $db->prepare("INSERT INTO Field (Field_ID, Field_name, FieldOwner_ID, Field_Capacity, Address_Line1, City, Country, Postcode, GLT, VAR, View_Screens, Press_Box, Chg_Hour)
+$stmt = $db->prepare("INSERT OR REPLACE INTO Field (Field_ID, Field_name, FieldOwner_ID, Field_Capacity, Address_Line1, City, Country, Postcode, GLT, VAR, View_Screens, Press_Box, Chg_Hour)
 VALUES (:field_id, :fieldName, :fieldOwner_ID, :capacity, :addressLine1, :city, :country, :postcode, :glt, :var, :viewScreens, :pressBox, :chgHour)");
 $stmt->bindValue(':field_id', $field_id, SQLITE3_TEXT);
 $stmt->bindValue(':fieldName', $fieldName, SQLITE3_TEXT);
@@ -60,13 +60,15 @@ if ($stmt->execute()) {
 
 $select_query = "SELECT * FROM Field";
 $result = $db->query($select_query);
-echo"All Users <br>";
+echo'<div class="user-output">';
+echo"All Fields <br>";
 echo"----------------------------------------------------------------------------------------------------<br>";
 
 while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
-    echo $row['Field_ID'] . " " . $row['Field_name'] . " " . $row['FieldOwner_ID'] . " " . $row['Field_Capacity'] . " " . $row['Address_Line1'] . " " . $row['City'] . " " . $row['Country'] . " " . $row['Postcode'] . " " . $row['GLT']. " " . $row['VAR']. " " . $row['View_Screens']. " " . $row['Press_Box']. " " . $row['Chg_Hour']"<br>";
+    echo $row['Field_ID'] . " " . $row['Field_name'] . " " . $row['FieldOwner_ID'] . " " . $row['Field_Capacity'] . " " . $row['Address_Line1'] . " " . $row['City'] . " " . $row['Country'] . " " . $row['Postcode'] . " " . $row['GLT']. " " . $row['VAR']. " " . $row['View_Screens']. " " . $row['Press_Box']. " " . $row['Chg_Hour']."<br>";
 }
 echo"----------------------------------------------------------------------------------------------------<br>";
+echo'</div>';
 }
 $db->close();
 ?>

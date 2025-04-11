@@ -25,9 +25,9 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST") {
         Role TEXT NOT NULL,
         Gender TEXT NOT NULL,
         Password TEXT NOT NULL
-        ");
+        )");
 
-$stmt = $db->prepare("INSERT INTO Users (User_ID, First_name, Last_name, Dob, Email_Address, TelNo, Role, Gender, Password)
+$stmt = $db->prepare("INSERT OR REPLACE INTO Users (User_ID, First_name, Last_name, Dob, Email_Address, TelNo, Role, Gender, Password)
 VALUES (:user_id, :firstName, :lastName, :dob, :email, :telNo, :role, :gender, :password)");
 $stmt->bindValue(':user_id', $user_id, SQLITE3_TEXT);
 $stmt->bindValue(':firstName', $firstName, SQLITE3_TEXT);
@@ -47,6 +47,7 @@ if ($stmt->execute()) {
 
 $select_query = "SELECT * FROM Users";
 $result = $db->query($select_query);
+echo'<div class="user-output">';
 echo"All Users <br>";
 echo"----------------------------------------------------------------------------------------------------<br>";
 
@@ -54,6 +55,7 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
     echo $row['User_ID'] . " " . $row['First_name'] . " " . $row['Last_name'] . " " . $row['Dob'] . " " . $row['Email_Address'] . " " . $row['TelNo'] . " " . $row['Role'] . " " . $row['Gender'] . " " . $row['Password']."<br>";
 }
 echo"----------------------------------------------------------------------------------------------------<br>";
+echo'</div>';
 }
 $db->close();
 ?>
