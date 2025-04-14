@@ -1,18 +1,34 @@
 <?php
+// select the correct email and user from the sign-in process
+session_start();
+
+if (!isset($_SESSION['email'])) {
+    header("Location: ../index.php");
+    exit();
+}
+
+$email = $_SESSION['email'];
+//
+
 $database = new SQLite3('../fb_managment_system.db');
 
-$query = "SELECT  t1.team_name AS team1, t2.team_name AS team2, m.Match_Date 
-          FROM match m
-          JOIN team t1 ON m.TeamA_ID = t1.team_id
-          JOIN team t2 ON m.TeamB_ID = t2.team_id
-          WHERE m.Match_Date >= DATE('now') 
-          ORDER BY m.Match_Date ASC";
-$results = $database->query($query);
+$stmt = $database->prepare('SELECT 
+    t1.Team_Name AS team1, t2.Team_Name AS team2, m.Match_Date
+    FROM Match m
+    INNER JOIN Team t1 ON m.TeamA_ID = t1.Team_ID
+    INNER JOIN Team t2 ON m.TeamB_ID = t2.Team_ID
+    INNER JOIN Users u ON (t1.Manager_ID = u.User_ID OR t2.Manager_ID = u.User_ID)
+    WHERE m.Match_Date >= DATE("now") AND u.Email_Address = :email
+    ORDER BY m.Match_Date ASC');
+
+$stmt->bindValue(':email', $email, SQLITE3_TEXT);
+$results = $stmt->execute();
 
 if (!$results) {
     die("Query failed: " . $database->lastErrorMsg());
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +44,7 @@ if (!$results) {
     <?php include 'sidebar.php'; ?>
     <div class="content">
         <header>
-            <h1>Match Calendar</h1>
+            <h1>Upcoming Matches</h1>
         </header>
         <h2>Upcoming Matches</h2>
         <table>
@@ -44,63 +60,14 @@ if (!$results) {
             <?php endwhile; ?>
         </table>
     </div>
-    <footer class="footer">
-    <p>goikontech@gmail.com</p>
-    <a href="#">Terms of use</a>
-    <a href="#">Support</a>
-    <a href="#">Policies</a>
-  </footer>
+    <footer>
+        <p>goikontech@gmail.com</p>
+        <a href="#">Terms of use</a>
+        <a href="#">Support</a>
+        <a href="#">Policies</a>
+    </footer>
 
-</body>
-<style>
-
-.footer {
-    position: fixed;
-    left: 250px;
-    bottom: 0;
-    width: calc(100% - 250px);
-    background-color: #153C57;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    z-index: 99;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-}
-
-.footer p {
-    margin: 0;
-    display: inline-block;
-    margin-right: 15px;
-}
-
-.footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s;
-}
-
-.footer a:hover {
-    color: #4CAF50;
-}
-
-@media (max-width: 768px) {
-    .sidebar {
-        width: 200px;
-    }
-    
-    .content {
-        margin-left: 200px;
-        width: calc(100% - 200px);
-    }
-    
-    .footer {
-        left: 200px;
-        width: calc(100% - 200px);
-    }
-}
-
-
-</style>
 </body>
 </html>
+
+
