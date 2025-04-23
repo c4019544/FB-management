@@ -1,31 +1,24 @@
 <?php
-
 session_start();
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-
     $db = new SQLite3('fb_managment_system.db');
-
 
     $stmt = $db->prepare('SELECT * FROM Users WHERE Email_Address = :email');
     $stmt->bindValue(':email', $email, SQLITE3_TEXT);
     $result = $stmt->execute();
 
-
     $user = $result->fetchArray(SQLITE3_ASSOC);
 
     if ($user) {
         if ($password === $user['Password']) {
-
             $_SESSION['email'] = $email;
             $_SESSION['Role'] = $user['Role'];
-
-
+            $_SESSION['user_id'] = $user['User_ID'];
+            
             if ($user['Role'] === 'Admin') {
                 header('Location: Admin/AdminDashboard.php');
             } elseif ($user['Role'] === 'Manager') {
