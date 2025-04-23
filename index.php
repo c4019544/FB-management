@@ -1,81 +1,79 @@
-<form>
-<div>
-<form action="../login_user.php" method="post">
-    <img src="/images/Logo.png" alt="Logo">
-    <br><br>
-    <input type="email" name="email" placeholder="Email" required>
-    <br><br>
-    <input type="password" name="password" placeholder="Password" required>
-    <br><br>
-    <button type="submit" value="submit">Login</button>
-    <br>
-    <button type="submit" value="submit">Sign up</button>
-</form>
-</div>
 
-<style>
-form {
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Styled Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #261a4f, #3e60f4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-img {
-    display: block;
-    margin: 0 auto;
-}
+        .login-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
 
-input {
-    width: 100%;
-    padding: 20px;
-    width: 700px;
-    border: 2px solid black;
-    border-radius: 10px;
-    font-size: 1rem;
-}
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
 
-button {
-    display: block;  
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0 auto;         
-    padding: 10px 40px;
-    background: #ccc;
-    background-color: white;
-    border: 0 none;
-    cursor: pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    border-color: solid black;
-    font-size: 1.1rem;
-    font-weight: bold;
-    width: 150px;
-}
+        label {
+            font-weight: bold;
+            color: #555;
+        }
 
-body,
-html {
-    height: 100%;
-    margin: 0;
-    display: grid;
-    place-items: center;
-    background-color: #153C57;
-}
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
 
-.img-container {
-    place-content: center;
-    padding: 40px;
-    border: 2px solid #ccc;
-}
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #221366;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-.form-container {
-    padding: 40px;
-    border: 2px solid #ccc;
-    background-color: #f9f9f9;
-}
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form action="login.php" method="POST">
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" required>
 
-.button-container {
-    place-items: center;
-    padding: 40px;
-    border: 2px solid #ccc;
-}
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
 
-</style>
+            <input type="submit" value="Sign In">
+        </form>
+    </div>
+</body>
+</html>
+
+

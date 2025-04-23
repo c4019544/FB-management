@@ -1,5 +1,5 @@
 <?php
-$database = new SQLite3('C:\xampp\htdocs\Group\FB-management\FB-management-1\fb_managment_system.db');
+$database = new SQLite3('../fb_managment_system.db');
 
 $query = "SELECT Message_ID, Sender_ID, Receiver_ID, Date_Time, Text_Message FROM Message ORDER BY Date_Time DESC";
 $results = $database->query($query);
@@ -46,5 +46,12 @@ if (!$results) {
             <?php endwhile; ?>
         </table>
     </div>
+    <footer>
+        <p>goikontech@gmail.com</p>
+        <a href="#">Terms of use</a>
+        <a href="#">Support</a>
+        <a href="#">Policies</a>
+    </footer>
+
 </body>
 </html>

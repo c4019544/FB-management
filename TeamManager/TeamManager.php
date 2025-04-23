@@ -7,19 +7,9 @@
     <title>Team Manager</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../styles/style.css">
-    <style>
-        #chartContainer {
-            width: 50%; 
-            margin: 0 auto; 
-            padding-top: 20px; 
-        }
-
-        #StatsChart a{
-            width: 100% !important; 
-            height: 400px;          
-        }
-    </style>
 </head>
+
+
 <body>
     <?php include 'sidebar.php'; ?>
 
@@ -31,7 +21,6 @@
     <div id="chartContainer">
         <canvas id="occupancyChart"></canvas>
     </div>
-<<<<<<< HEAD
 
     <script>
         var occupiedRooms = <?php echo $occupiedRooms; ?>;
@@ -56,8 +45,27 @@
         });
     </script>
 
-=======
->>>>>>> 66ad8da488ecad90cd3939de0324a682031dc610
-</body>
+    <footer>
+        <p>goikontech@gmail.com</p>
+        <a href="#">Terms of use</a>
+        <a href="#">Support</a>
+        <a href="#">Policies</a>
+    </footer>
 
+</body>
 </html>
+
+
+
+<style>
+    #chartContainer {
+        width: 50%; 
+        margin: 0 auto; 
+        padding-top: 20px; 
+    }
+
+    #StatsChart a{
+        width: 100% !important; 
+        height: 400px;          
+    }
+</style>
