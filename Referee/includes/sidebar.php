@@ -1,10 +1,11 @@
 <?php
 // session_start();
-// if (!isset($_SESSION["user_id"])) {
-//     header("Location: ../login.php");
-//     exit();
-// }
+if (!isset($_SESSION["user_id"])) {
+    header("Location: ../login.php");
+    exit();
+}
 ?>
+
 <div class="sidebar">
     <h2>Referee</h2>
     <ul>
@@ -24,7 +25,7 @@
         <li class="has-submenu">
             <a href="#">Match Statistics <span class="dropdown-arrow">▶</span></a>
             <ul>
-                <li><a href="../pages/ViewMatchHistory.php">View Match History</a></li>
+                <li><a href="../pages/ViewMatchHistoryList.php">View Match History</a></li>
                 <li><a href="../pages/RefereePerformance.php">Referee Performance</a></li>
 
             </ul>
