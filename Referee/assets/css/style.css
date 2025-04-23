@@ -331,7 +331,7 @@ footer p {
     margin-top: 5px;
 }
 
-.incident-form input {
+.incident-form input, .incident-form select {
     padding: 12px;
     width: 100%; /* Makes input fields responsive */
     max-width: 400px; /* Prevents overly wide inputs */
@@ -342,7 +342,7 @@ footer p {
     transition: border 0.3s ease-in-out;
 }
 
-.incident-form input:focus {
+.incident-form input:focus, .incident-form select:focus {
     border-color: #007bff; /* Adds a blue border on focus */
 }
 
@@ -465,7 +465,7 @@ footer p {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
     box-sizing: border-box;
 }
 
@@ -482,13 +482,21 @@ footer p {
     color: #555;
 }
 
-.login-signup input {
+.login-signup input , .login-signup select {
     width: 100%;
     padding: 10px 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
     box-sizing: border-box;
+}
+
+
+.login-signup .col-6{
+    width: 48%;
+    display: inline-block;
+    margin: 0 10px 0 10px;
+
 }
 
 .login-signup button {

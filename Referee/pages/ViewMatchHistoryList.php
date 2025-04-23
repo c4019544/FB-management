@@ -13,7 +13,7 @@ include "../db.php"; // adjust path if needed
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Upcoming Matches</title>
+<title>Match History</title>
 <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -26,7 +26,6 @@ include "../db.php"; // adjust path if needed
 $refereeId = $_SESSION['user_id'];
 // Set today's date
 $todays_date = date("Y-m-d");
-// $todays_date = date("2025-04-10");
 
 // Fetch upcoming matches with team names with current referee user id
 $matchesStmt = $pdo->prepare("
@@ -43,16 +42,16 @@ $matchesStmt = $pdo->prepare("
     JOIN Team ta ON m.TeamB_ID = ta.Team_ID
     JOIN Field_Booking b ON m.Booking_ID = b.Booking_ID
     JOIN Field f ON b.Field_ID = f.Field_ID
-    WHERE m.Match_Date >= ? AND m.Referee_ID = ?
+    WHERE m.Match_Date <= ? AND m.Referee_ID = ?
     ORDER BY m.Match_Date ASC
 ");
 $matchesStmt->execute([$todays_date, $refereeId]);
-$upcoming_matches = $matchesStmt->fetchAll(PDO::FETCH_ASSOC);
+$matches = $matchesStmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <div class="content">
     <header>
-        <h1>Upcoming Matches</h1>
+        <h1>Matches History List</h1>
     </header>
     <div class="card-section">
         <div class="card">
@@ -65,16 +64,18 @@ $upcoming_matches = $matchesStmt->fetchAll(PDO::FETCH_ASSOC);
                             <th>Team</th>
                             <th>Date</th>
                             <th>Location</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($upcoming_matches as $match): ?>
+                        <?php foreach ($matches as $match): ?>
                             <tr>
                                 <td><?= htmlspecialchars($match['home_team']) ?></td>
                                 <td>VS</td>
                                 <td><?= htmlspecialchars($match['away_team']) ?></td>
                                 <td><?= htmlspecialchars($match['Match_Date']) ?></td>
                                 <td><?= htmlspecialchars($match['location']) ?>, <?= htmlspecialchars($match['Address_Line1']) ?>, <?= htmlspecialchars($match['City']) ?></td>
+                                <td><a href="../pages/ViewMatchHistory.php?match_id=<?= $match['Match_ID'] ?>">View Details</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

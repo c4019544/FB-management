@@ -1,9 +1,9 @@
 <?php
-// session_start();
-// if (!isset($_SESSION['user_id'])) {
-// header("Location: ../login.php");
-// exit();
-// }
+session_start();
+if (!isset($_SESSION['user_id'])) {
+header("Location: ../login.php");
+exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,8 +45,16 @@
                                 <th><input type="text" name="location" id="location"></th>
                             </tr>
                             <tr>
+                                <th class="sub-headings">Date</th>
+                                <th><input type="date" name="date" id="date"></th>
+                            </tr>
+                            <tr>
                                 <th class="sub-headings">Time</th>
                                 <th><input type="text" name="time" id="time"></th>
+                            </tr>
+                            <tr>
+                                <th class="sub-headings">Match Length</th>
+                                <th><input type="number" name="Match_length" id="Match_length"></th>
                             </tr>
                             
                             
