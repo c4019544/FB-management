@@ -20,7 +20,7 @@ exit();
     <header>
         <h1>Settings</h1>
     </header>
-    <p>Welcome to the Match Management System. - Settings</p>
+    <p>Welcome to the Football Management System. - Settings</p>
 </div>
 </body>
 </html>
