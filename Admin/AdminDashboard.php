@@ -12,7 +12,7 @@
         <header>
             <h1>Dashboard</h1>
         </header>
-    </div>
+    
     <?php
         include("sidebar2.php");    
     ?>
@@ -90,3 +90,11 @@
             <button>Add New Field</button>
         </a>
     </div>
+
+    <div>
+        <a href="AdminCreateTeamPage.php">
+            <button>Add New Team</button>
+        </a>
+    </div>
+
+</div>

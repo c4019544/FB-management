@@ -11,7 +11,7 @@
     <header>
         <h1>Users</h1>
     </header>
-</div>
+    
     <?php
         include("sidebar2.php");    
     ?>
@@ -29,3 +29,4 @@
             <button>View All Users</button>
         </a>
     </div>
+</div>
