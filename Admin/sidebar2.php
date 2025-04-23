@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="stylesheet" href="style.css" />
+    <div class="content">
 </head>
 <body>
     <div class="sidebar">
@@ -19,10 +20,5 @@
             <li><a href="AdminSettings.php">Settings</a></li>
         </ul>
     </div>
-
-    <div class="content">
-        <header>
-            <h1>Welcome Admin</h1>
-        </header>
 </body>
 </html>
