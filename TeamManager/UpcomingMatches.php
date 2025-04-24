@@ -9,67 +9,56 @@ if (!isset($_SESSION['email']) || $_SESSION['Role'] !== 'Manager') {
 $email = $_SESSION['email'];
 $database = new SQLite3('../fb_managment_system.db');
 
-// 1. Try to get manager's team info
-$teamQuery = $database->prepare('SELECT Team_ID, Team_Name FROM Team WHERE Manager_ID = 
-    (SELECT User_ID FROM Users WHERE Email_Address = :email)');
+$teamQuery = $database->prepare('
+    SELECT Team_ID, Team_Name 
+    FROM Team 
+    WHERE Manager_ID = (
+        SELECT User_ID FROM Users WHERE Email_Address = :email
+    )');
 $teamQuery->bindValue(':email', $email, SQLITE3_TEXT);
 $teamResult = $teamQuery->execute();
 
 $teamData = $teamResult->fetchArray(SQLITE3_ASSOC);
+$team_id = $teamData['Team_ID'] ?? 0;
+$team_name = $teamData['Team_Name'] ?? 'Unknown Team';
 
-if ($teamData && !empty($teamData['Team_ID'])) {
-    $team_id = $teamData['Team_ID'];
-    $team_name = $teamData['Team_Name'];
-} else {
-    // Fallback if no team is found
-    $team_id = 5; // your real team ID here
-    $team_name = 'Your Team'; // you can hardcode a name for now
-}
-
-// 2. Count upcoming matches
-$countQuery = $database->prepare('SELECT COUNT(*) as match_count 
+$countQuery = $database->prepare('
+    SELECT COUNT(*) as match_count 
     FROM Match 
     WHERE (TeamA_ID = :team_id OR TeamB_ID = :team_id)
     AND DATE(Match_Date) >= DATE("now")');
 $countQuery->bindValue(':team_id', (int)$team_id, SQLITE3_INTEGER);
 $countResult = $countQuery->execute();
-$matchCount = $countResult->fetchArray(SQLITE3_ASSOC)['match_count'];
+$matchCount = $countResult->fetchArray(SQLITE3_ASSOC)['match_count'] ?? 0;
 
-// 3. Get match details
-$matchQuery = $database->prepare('SELECT 
-    t1.Team_Name AS team1, 
-    t2.Team_Name AS team2, 
-    m.Match_Date,
-    CASE 
-        WHEN m.TeamA_ID = :team_id THEN "Home" 
-        ELSE "Away" 
-    END AS match_type
+$matchQuery = $database->prepare('
+    SELECT 
+        t1.Team_Name AS team1, 
+        t2.Team_Name AS team2, 
+        m.Match_Date,
+        CASE 
+            WHEN m.TeamA_ID = :team_id THEN "Home" 
+            ELSE "Away" 
+        END AS match_type
     FROM Match m
     INNER JOIN Team t1 ON m.TeamA_ID = t1.Team_ID
     INNER JOIN Team t2 ON m.TeamB_ID = t2.Team_ID
     WHERE (m.TeamA_ID = :team_id OR m.TeamB_ID = :team_id)
     AND DATE(m.Match_Date) >= DATE("now")
     ORDER BY m.Match_Date ASC');
-
 $matchQuery->bindValue(':team_id', (int)$team_id, SQLITE3_INTEGER);
 $results = $matchQuery->execute();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Match Calendar</title>
+    <title>Upcoming Matches</title>
     <link rel="stylesheet" href="../styles/style.css">
     <style>
         .content { padding: 20px; }
-        .debug-info {
-            background-color: #f8f9fa;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
-            margin-bottom: 20px;
-            font-family: monospace;
-        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -106,15 +95,7 @@ $results = $matchQuery->execute();
             <h1>Upcoming Matches</h1>
         </header>
 
-        <!-- Debug Information -->
-        <div class="debug-info">
-            <h3>System Information</h3>
-            <p><strong>Team ID:</strong> <?= htmlspecialchars($team_id) ?></p>
-            <p><strong>Team Name:</strong> <?= htmlspecialchars($team_name) ?></p>
-            <p><strong>Upcoming Matches:</strong> <?= $matchCount ?></p>
-        </div>
-
-        <h2><?= htmlspecialchars($team_name) ?> Schedule</h2>
+        <h2>Schedule</h2>
 
         <?php if ($matchCount == 0): ?>
             <div class="no-matches">
