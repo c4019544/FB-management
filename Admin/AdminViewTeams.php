@@ -36,7 +36,7 @@
                     <td>$teamName</td>
                     <td>$city</td>
                     <td>$managerID</td>
-                    <td> <a href='deleteTeam.php' ? userID=$id'> Delete </a> </td>
+                    <td> <a href='deleteTeam.php ? teamID=$id'> Delete </a> </td>
                 </tr>";
         }
 

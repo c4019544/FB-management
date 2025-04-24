@@ -46,7 +46,7 @@
                     <td>$role</td>
                     <td>$gender</td>
                     <td>$password</td>
-                    <td> <a href='deleteUser.php' ? userID=$id'> Delete </a> </td>
+                    <td> <a href='deleteUser.php ? userID=$id'> Delete </a> </td>
                 </tr>";
         }
 

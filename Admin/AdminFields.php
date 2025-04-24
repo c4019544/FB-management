@@ -22,4 +22,6 @@
         </a>
     </div>
 
+    <?php include("AdminViewFields.php"); ?>
+
 </div>
