@@ -20,11 +20,18 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 
+// Get users for dropdown
+$stmt = $db->prepare("SELECT User_ID, First_name, Last_name FROM Users WHERE User_ID != ?");
+$stmt->execute([$user_id]);
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Handle form submit
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['message'], $_POST['receiver_id'])) {
     $stmt = $db->prepare("INSERT INTO Message (Sender_ID, Receiver_ID, Text_Message, Date_Time) VALUES (?, ?, ?, datetime('now'))");
     $stmt->execute([$user_id, $_POST['receiver_id'], $_POST['message']]);
 }
 
+// Get all messages involving this user
 $stmt = $db->prepare("SELECT * FROM Message WHERE Sender_ID = ? OR Receiver_ID = ? ORDER BY Date_Time DESC");
 $stmt->execute([$user_id, $user_id]);
 $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -38,6 +45,7 @@ $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Your Messages</title>
     <link rel="stylesheet" href="../styles/style.css">
     <style>
+        /* same CSS styles as before */
         .content { padding: 20px; }
         .message-form {
             background-color: #f8f9fa;
@@ -51,7 +59,7 @@ $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
             margin-bottom: 5px;
             font-weight: bold;
         }
-        .message-form input[type="text"],
+        .message-form select,
         .message-form textarea {
             width: 100%;
             padding: 8px;
@@ -117,8 +125,15 @@ $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="message-form">
             <h2>Send a Message</h2>
             <form method="post">
-                <label for="receiver_id">Send To (User ID):</label>
-                <input type="text" name="receiver_id" required>
+                <label for="receiver_id">Send To:</label>
+                <select name="receiver_id" required>
+                    <option value="">-- Select User --</option>
+                    <?php foreach ($users as $user): ?>
+                        <option value="<?= htmlspecialchars($user['User_ID']) ?>">
+                            <?= htmlspecialchars($user['First_name'] . ' ' . $user['Last_name']) ?> (ID: <?= htmlspecialchars($user['User_ID']) ?>)
+                        </option>
+                    <?php endforeach; ?>
+                </select>
 
                 <label for="message">Message:</label>
                 <textarea name="message" placeholder="Type your message..." rows="4" required></textarea>
