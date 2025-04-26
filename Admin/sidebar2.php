@@ -15,11 +15,7 @@
             <li><a href="AdminDashboard.php">Dashboard</a></li>
             <li><a href="AdminUsers.php">Users</a></li>
             <li><a href="AdminTeams.php">Teams</a></li>
-<<<<<<< Updated upstream
             <li><a href="AdminFields.php">Fields</a></li>
-=======
-            <li><a href="AdminMatches.php">Matches</a></li>
->>>>>>> Stashed changes
             <li><a href="AdminReports.php">Reports</a></li>
             <li><a href="AdminSettings.php">Settings</a></li>
         </ul>
