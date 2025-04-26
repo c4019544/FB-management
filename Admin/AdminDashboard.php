@@ -12,11 +12,8 @@
         <header>
             <h1>Dashboard</h1>
         </header>
-<<<<<<< HEAD
     </div>
-=======
-    
->>>>>>> jamie
+
     <?php
         include("sidebar2.php");    
     ?>
@@ -38,11 +35,7 @@
 
     <div>
         <?php
-<<<<<<< HEAD
-        $db2 = new SQLite3('C:\Users\jamie\OneDrive\Documents\xampp\htdocs\FB-management\fb_managment_system.db');
-=======
         $db2 = new SQLite3('../fb_managment_system.db');
->>>>>>> jamie
         $query2 = "SELECT COUNT (*) as total_teams FROM Team";
         $result2 = $db2->querySingle($query2, true);
 
@@ -54,8 +47,6 @@
         $db2->close();
         ?>
     </div>
-<<<<<<< HEAD
-=======
 
     <div>
         <?php
@@ -108,4 +99,4 @@
     </div>
 
 </div>
->>>>>>> jamie
+
