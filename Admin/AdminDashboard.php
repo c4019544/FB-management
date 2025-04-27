@@ -12,7 +12,6 @@
         <header>
             <h1>Dashboard</h1>
         </header>
-    </div>
 
     <?php
         include("sidebar2.php");    
