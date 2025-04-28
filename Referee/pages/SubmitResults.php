@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../index.php");
@@ -185,6 +186,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['match_id'])) {
 }
 ?>
 
+=======
+// session_start();
+// if (!isset($_SESSION['user_id'])) {
+// header("Location: ../login.php");
+// exit();
+// }
+?>
+>>>>>>> jamie
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -203,12 +212,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['match_id'])) {
     <div class="card-section">
         <div class="card">
             <div class="table-container">
+<<<<<<< HEAD
                 <form action="#" method="POST" class="incident-form">
+=======
+                <form action="#">
+>>>>>>> jamie
                     <table class="custom-table history-table" style="border:0px;">
                         <thead>
                             <tr>
                                 <th colspan="4" class="text-center">Results</th>
                             </tr>
+<<<<<<< HEAD
                             <tr>
                                 <th colspan="4" class="text-center">
                                     <label for="match_id">Select Match</label>
@@ -220,11 +234,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['match_id'])) {
                                     </select>
                                 </th>
                             </tr>
+=======
+>>>>>>> jamie
                         
                         </thead>
                         <tbody  class="submit-result">
                             <tr>
                                 <th class="sub-headings">Team 1 Name</th>
+<<<<<<< HEAD
                                 <th>
                                     <input type="text" name="team1_id" id="team1_id" hidden >
                                     <input type="text" name="team1" id="team1" readonly>
@@ -292,6 +309,78 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['match_id'])) {
                                         <p style="color: light-green;"><?= $submitResultMessage ?></p>
                                     <?php endif; ?>
                                 </th>
+=======
+                                <th><input type="text" name="team1" id="team1"></th>
+
+                                <th class="border-left-bold-white sub-headings">Team 2 Name</th>
+                                <th><input type="text" name="team2" id="team2"></th>
+                            </tr>
+                            <tr>
+                                <th class="sub-headings">Goals</th>
+                                <th><input type="text" name="goals" id="goals"></th>
+
+                                <th class="border-left-bold-white sub-headings">Goals</th>
+                                <th><input type="text" name="goals" id="goals"></th>
+                            </tr>
+                            <tr>
+                                <th class="sub-headings">Goals scored by:</th>
+                                <td class="scored-by">
+                                     <div class="flex">
+                                        <p class="left heading">Player Name</p>
+                                        <p class="right heading">Time</p> 
+                                     </div>
+                                     <div class="flex">
+                                       <input type="text" name="player" id="player"></p>
+                                        <input type="text" name="time"></p> 
+                                     </div>
+                                     <div class="flex">
+                                       <input type="text" name="player" id="player"></p>
+                                        <input type="text" name="time"></p> 
+                                     </div>
+                                     <div class="flex">
+                                       <input type="text" name="player" id="player"></p>
+                                        <input type="text" name="time"></p> 
+                                     </div>
+
+                                </td>
+                                   
+                                    
+
+                                <th class="border-left-bold-white sub-headings">Goals scored by:</th>
+                                <td class="scored-by">
+                                     <div class="flex">
+                                        <p class="left heading">Player Name</p>
+                                        <p class="right heading">Time</p> 
+                                     </div>
+                                     <div class="flex">
+                                       <input type="text" name="player" id="player"></p>
+                                        <input type="text" name="time"></p> 
+                                     </div>
+                                     <div class="flex">
+                                       <input type="text" name="player" id="player"></p>
+                                        <input type="text" name="time"></p> 
+                                     </div>
+                                     <div class="flex">
+                                       <input type="text" name="player" id="player"></p>
+                                        <input type="text" name="time"></p> 
+                                     </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="sub-headings">Yellow Cards</th>
+                                <th><input type="text" name="yellow-card" id="yellow-card"></th>
+
+                                <th class="border-left-bold-white sub-headings">Yellow Cards</th>
+                                <th><input type="text" name="yellow-card" id="yellow-card"></th>
+                            </tr>
+                            <tr>
+                                <th class="sub-headings">Red Cards</th>
+                                <th><input type="text" name="red-card" id="red-card"></th>
+                                
+                                <th class="border-left-bold-white sub-headings">Red Cards</th>
+                                <th><input type="text" name="red-card" id="red-card"></th>
+>>>>>>> jamie
                             </tr>
                             
                         </tbody>
@@ -301,6 +390,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['match_id'])) {
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -343,5 +433,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['match_id'])) {
             });
         });
     </script>
+=======
+>>>>>>> jamie
 </body>
 </html>

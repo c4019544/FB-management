@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../index.php");
@@ -25,14 +26,28 @@ $query = "
 $stmt = $pdo->prepare($query);
 $stmt->execute();
 $incidents = $stmt->fetchAll(PDO::FETCH_ASSOC);
+=======
+// session_start();
+// if (!isset($_SESSION['user_id'])) {
+// header("Location: ../login.php");
+// exit();
+// }
+>>>>>>> jamie
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incident Reports</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+=======
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Incident Reports</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+>>>>>>> jamie
 </head>
 <body>
 <?php include '../includes/sidebar.php'; ?>
@@ -42,12 +57,16 @@ $incidents = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h1>Incident Reports</h1>
     </header>
     <p class="text-center">View Incident Report</p>
+<<<<<<< HEAD
 
+=======
+>>>>>>> jamie
     <div class="card-section">
         <div class="table-container">
             <table class="custom-table history-table">
                 <thead>
                     <tr>
+<<<<<<< HEAD
                         <th>Match ID</th>
                         <th>Team Name</th>
                         <th>Player Name</th>
@@ -68,6 +87,39 @@ $incidents = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <?php if (empty($incidents)): ?>
                         <tr><td colspan="5" class="text-center">No incidents found.</td></tr>
                     <?php endif; ?>
+=======
+                        <th>Player Name</th>
+                        <th>Team</th>
+                        <th>Time</th>
+                        <th>Incident</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Messi</td>
+                        <td>Argentina</td>
+                        <td>45'</td>
+                        <td>Dangerious tackle on an opponent</td>
+                    </tr>
+                    <tr>
+                        <td>Ronaldo</td>
+                        <td>Portugal</td>
+                        <td>18'</td>
+                        <td>Foul to stop a counter attack</td>
+                    </tr>
+                    <tr>
+                        <td>Ronaldo</td>
+                        <td>Portugal</td>
+                        <td>18'</td>
+                        <td>Foul to stop a counter attack</td>
+                    </tr>
+                    <tr>
+                        <td>Ronaldo</td>
+                        <td>Portugal</td>
+                        <td>18'</td>
+                        <td>Foul to stop a counter attack</td>
+                    </tr>
+>>>>>>> jamie
                 </tbody>
             </table>
         </div>
