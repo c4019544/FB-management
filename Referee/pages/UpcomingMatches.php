@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../index.php");
@@ -8,13 +7,6 @@ exit();
 ?>
 <?php
 include "../db.php"; // adjust path if needed
-=======
-// session_start();
-// if (!isset($_SESSION['user_id'])) {
-// header("Location: ../login.php");
-// exit();
-// }
->>>>>>> jamie
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +19,6 @@ include "../db.php"; // adjust path if needed
 <body>
 <?php include '../includes/sidebar.php'; ?>
 
-<<<<<<< HEAD
 <?php
 // hanlde upcomming matches
 
@@ -59,8 +50,6 @@ $matchesStmt->execute([$todays_date, $refereeId]);
 $upcoming_matches = $matchesStmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-=======
->>>>>>> jamie
 <div class="content">
     <header>
         <h1>Upcoming Matches</h1>
@@ -72,18 +61,13 @@ $upcoming_matches = $matchesStmt->fetchAll(PDO::FETCH_ASSOC);
                     <thead>
                         <tr class="sub-headings">
                             <th>Team</th>
-<<<<<<< HEAD
                             <th>VS</th>
                             <th>Team</th>
                             <th>Date</th>
-=======
-                            <th>Time</th>
->>>>>>> jamie
                             <th>Location</th>
                         </tr>
                     </thead>
                     <tbody>
-<<<<<<< HEAD
                         <?php foreach ($upcoming_matches as $match): ?>
                             <tr>
                                 <td><?= htmlspecialchars($match['home_team']) ?></td>
@@ -95,24 +79,6 @@ $upcoming_matches = $matchesStmt->fetchAll(PDO::FETCH_ASSOC);
                         <?php endforeach; ?>
                     </tbody>
 
-=======
-                        <tr>
-                            <td>Manchester United</td>
-                            <td>19:00</td>
-                            <td>Old Trafford</td>
-                        </tr>
-                        <tr>
-                            <td>Manchester United</td>
-                            <td>19:00</td>
-                            <td>Old Trafford</td>
-                        </tr>
-                        <tr>
-                            <td>Manchester United</td>
-                            <td>19:00</td>
-                            <td>Old Trafford</td>
-                        </tr>
-                    </tbody>
->>>>>>> jamie
                 </table>
             </div>
         </div>
