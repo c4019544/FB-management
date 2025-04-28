@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> jamie
 <div class="sidebar">
     <h2>Field Owner</h2>
     <ul>

@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Check if user is logged in and is a manager
 if (!isset($_SESSION['email']) || $_SESSION['Role'] !== 'Manager') {
     header("Location: login.php");
     exit();
@@ -10,10 +9,8 @@ if (!isset($_SESSION['email']) || $_SESSION['Role'] !== 'Manager') {
 $manager_id = $_SESSION['user_id'] ?? '';
 $database = new SQLite3('../fb_managment_system.db');
 
-// Get manager's team
 $team_id = $database->querySingle("SELECT Team_ID FROM Team WHERE Manager_ID = '".SQLite3::escapeString($manager_id)."'");
 
-// Get all players for this team
 $players = [];
 if ($team_id) {
     $query = $database->prepare("
@@ -31,19 +28,16 @@ if ($team_id) {
     }
 }
 
-// Initialize variables
 $selectedPlayer = null;
 $currentPosition = '';
 $successMessage = '';
 $errorMessage = '';
 
-// Handle position update
 if (isset($_POST['update'])) {
     $playerID = $_POST['playerID'] ?? '';
     $position = $_POST['position'] ?? '';
 
     if (!empty($playerID) && !empty($position)) {
-        // Verify player belongs to manager's team
         $verifyStmt = $database->prepare("
             SELECT COUNT(*) as count 
             FROM Player p
@@ -62,7 +56,6 @@ if (isset($_POST['update'])) {
             
             if ($updateStmt->execute()) {
                 $successMessage = "Position updated successfully!";
-                // Update the current position display
                 foreach ($players as &$player) {
                     if ($player['Player_ID'] == $playerID) {
                         $player['Position'] = $position;
@@ -79,12 +72,10 @@ if (isset($_POST['update'])) {
     }
 }
 
-// Handle player removal
 if (isset($_POST['remove_player'])) {
     $playerID = $_POST['player_id'] ?? '';
     
     if (!empty($playerID)) {
-        // Verify player belongs to manager's team before removal
         $verifyStmt = $database->prepare("
             SELECT COUNT(*) as count 
             FROM Player p
@@ -101,7 +92,6 @@ if (isset($_POST['remove_player'])) {
             $deleteStmt->bindValue(':playerID', $playerID, SQLITE3_TEXT);
             
             if ($deleteStmt->execute()) {
-                // Remove player from local array and refresh display
                 foreach ($players as $key => $player) {
                     if ($player['Player_ID'] == $playerID) {
                         unset($players[$key]);
@@ -114,7 +104,6 @@ if (isset($_POST['remove_player'])) {
     }
 }
 
-// Handle player selection
 if (isset($_POST['playerID']) || isset($_GET['playerID'])) {
     $playerID = $_POST['playerID'] ?? $_GET['playerID'] ?? '';
     
@@ -264,7 +253,6 @@ if (isset($_POST['playerID']) || isset($_GET['playerID'])) {
         </header>
 
         <main>
-            <!-- Position Management Section -->
             <div class="management-section">
                 <h2>Player Position Management</h2>
                 
@@ -309,8 +297,6 @@ if (isset($_POST['playerID']) || isset($_GET['playerID'])) {
                     </form>
                 </div>
             </div>
-
-            <!-- Team Roster Section -->
             <div class="management-section">
                 <h2>Team Roster</h2>
                 
