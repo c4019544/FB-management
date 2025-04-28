@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../index.php");
@@ -204,14 +203,6 @@ $upcoming_matches = $matchesStmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-=======
-//  session_start();
-// if (!isset($_SESSION['user_id'])) {
-//     header("Location: login.php");
-//     exit();
-// }
-?>
->>>>>>> jamie
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -241,7 +232,6 @@ $upcoming_matches = $matchesStmt->fetchAll(PDO::FETCH_ASSOC);
                                     </tr>
                                 </thead>
                                 <tbody>
-<<<<<<< HEAD
                                     <?php if (!empty($upcoming_matches)): ?>
                                         <?php foreach ($upcoming_matches as $match): ?>
                                             <tr>
@@ -260,35 +250,12 @@ $upcoming_matches = $matchesStmt->fetchAll(PDO::FETCH_ASSOC);
                         </div>
 
                         <a class="custom-button" href="UpcomingMatches.php">View Match Details</a>
-=======
-                                    <tr>
-                                        <td>Manchester Unites</td>
-                                        <td>VS</td>
-                                        <td>Liverpool</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Arsenal Tigers</td>
-                                        <td>VS</td>
-                                        <td>Real Madrid</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sheffield United</td>
-                                        <td>VS</td>
-                                        <td>Barcelona</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                        <a class="custom-button" href="ViewMatchHistory.php">View Match Details</a>
->>>>>>> jamie
                     </div>
                 </div>
 
                 <div class="upper-right-card">
                     <div class="card">
                         <h2>Incident Reporting Form</h2>
-<<<<<<< HEAD
                         <form method="POST" class="incident-form">
                             <label for="match_id">Match *</label>
                             <select name="match_id" id="match_id" required>
@@ -326,17 +293,6 @@ $upcoming_matches = $matchesStmt->fetchAll(PDO::FETCH_ASSOC);
                         <?php if ($incidentMessage): ?>
                             <p style="color: light-green;"><?= $incidentMessage ?></p>
                         <?php endif; ?>
-=======
-                        <form action="#" class="incident-form">
-                            <label for="player_name">Player Name</label>
-                            <input type="text" name="player_name">
-                            <label for="team">Team</label>
-                            <input type="text" name="team">
-                            <label for="time">Time</label>
-                            <input type="time" name="time">
-                            <button class="custom-button">Submit</button>
-                        </form>
->>>>>>> jamie
                     </div>
                 </div>
             </div>
@@ -344,7 +300,6 @@ $upcoming_matches = $matchesStmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="flex">
                 <div class="lower-left-card">
                     <div class="card">
-<<<<<<< HEAD
                         <h2>Disciplinary Action and Match Results</h2>
                         <form method="POST" class="incident-form">
 
@@ -387,33 +342,11 @@ $upcoming_matches = $matchesStmt->fetchAll(PDO::FETCH_ASSOC);
                         <?php endif; ?>
                     </div>
 
-=======
-                        <h2>Disciplinary Action And Results</h2>
-                        <form action="#" class="incident-form">
-                            <label for="yellow_card">Yellow Card</label>
-                            <input type="text" name="yellow_card">
-                            <label for="red_card">Red Card</label>
-                            <input type="text" name="red_card">
-                            <label >Match Results</label>
-                            <div class="flex">
-                                <label>Team 1:</label>
-                                <input type="text" name="team1">
-                            </div>
-                            <div class="flex">
-                                <label>Team 2:</label>
-                                <input type="text" name="team2">
-                            </div>
-                            
-                            <button class="custom-button">Submit</button>
-                        </form>
-                    </div>
->>>>>>> jamie
                 </div>
                 <div class="lower-right-card">
                     <div class="card">
                         <h2>Recent Activity Feed</h2>
                         <div class="table-container">
-<<<<<<< HEAD
                         <table class="custom-table">
                             <thead>
                                 <tr>
@@ -435,36 +368,6 @@ $upcoming_matches = $matchesStmt->fetchAll(PDO::FETCH_ASSOC);
                             </tbody>
                         </table>
 
-=======
-                            <table class="custom-table">
-                                <!-- <thead>
-                                    <tr>
-                                        <th colspan="3">Upcoming Matches</th>
-                                    </tr>
-                                </thead> -->
-                                <tbody>
-                                    <tr>
-                                       <td>Subitted Match Results</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Recent Assignemts and Reports Field</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Reported an incident of foul</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Issues red card to xy player</td>
-                                    </tr>
-                                    <tr>
-                                        <td>reported incident of other irregularities</td>
-                                    </tr>
-                                    <tr>
-                                        <td>submitted match results</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
->>>>>>> jamie
                         </div>
                     </div>
                 </div>
@@ -474,7 +377,6 @@ $upcoming_matches = $matchesStmt->fetchAll(PDO::FETCH_ASSOC);
         
         
     </section>
-<<<<<<< HEAD
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -554,8 +456,6 @@ $upcoming_matches = $matchesStmt->fetchAll(PDO::FETCH_ASSOC);
         });
     });
     </script>
-=======
->>>>>>> jamie
 </body>
 <?php include '../includes/footer.php'; ?>
 </html>
