@@ -1,0 +1,580 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* display: flex; */
+    height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 15%;
+    background-color: #153C57;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+.sidebar h2 {
+    color: #ecf0f1;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: left;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.sidebar ul li:hover {
+    background-color: rgb(32, 88, 129);
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+/* Content Styles */
+.content {
+    position: absolute;
+    /* overflow: scroll; */
+    left: 15.5%; /* Align with sidebar */
+    padding: 10px;
+    width: 83%;
+}
+
+.content header {
+    background-color: #ecf0f1;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content header h1 {
+    margin: 0;
+}
+
+
+
+
+
+
+
+/* Sidebar Scrollable */
+.sidebar {
+    overflow-y: auto;  /* Enable vertical scrolling */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent; /* Custom scrollbar color */
+}
+
+/* Customize scrollbar for Webkit browsers (Chrome, Safari) */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Dropdown Menu */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: left;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    position: relative;
+}
+
+.sidebar ul li:hover {
+    background-color: rgb(32, 88, 129);
+}
+
+/* Style for Submenu */
+.sidebar ul li ul {
+    display: none; /* Hide submenus initially */
+    padding-left: 20px;
+    list-style: none;
+}
+
+.sidebar ul li.active > ul {
+    display: block; /* Show submenu when parent is active */
+}
+
+/* Arrow for Dropdown */
+.sidebar ul li .dropdown-arrow {
+    float: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar ul li.active .dropdown-arrow {
+    transform: rotate(90deg);
+}
+
+footer {
+    background-color: #153C57;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 15.5%; /* Align with content */
+    width: 83%; /* Adjust width */
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+footer p {
+    margin: 0;
+    color: #ecf0f1;
+}
+
+.card {
+    background-color: #153C57;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
+}
+.card h2{
+    color: #ecf0f1;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: underline;
+}
+.card p {
+    color: #ecf0f1;
+    font-size: 16px;
+}
+
+.card-section {
+    position: relative;
+    width: 100%;
+    /* height: 100vh; Full viewport height */
+    /* overflow-y: auto; Enable vertical scrolling */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+
+/* Positioning the first row */
+.upper-left-card {
+    padding: 10px;
+    margin: 10px;
+    min-width: 45%;
+}
+
+.upper-right-card {
+    padding: 10px;
+    margin: 10px;
+    min-width: 45%;
+}
+
+/* Second row appears after scrolling */
+.lower-left-card {
+    padding: 10px;
+    margin: 10px;
+    min-width: 45%;
+}
+
+.lower-right-card {
+   padding: 10px;
+   margin: 10px;
+   min-width: 45%;
+}
+
+.flex{
+    display: flex;
+}
+.justify-space-around{
+    justify-content: space-around;
+}
+.match-details{
+    min-width: 450px;  
+}
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Ensures responsiveness */
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.custom-table th {
+    background-color: #9fa1a5;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.custom-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Striped effect */
+}
+
+.custom-table tr:hover {
+    background-color: #e3f2fd; /* Light blue hover effect */
+}
+
+.custom-table td {
+    color: #333;
+}
+
+.custom-table th:first-child,
+.custom-table td:first-child {
+    border-left: none;
+}
+
+.custom-table th:last-child,
+.custom-table td:last-child {
+    border-right: none;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .custom-table th, .custom-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+.history-table th {
+    background-color: #153C57;
+}
+.sub-headings th{
+    background-color: #96b2c5;
+    color: #000;
+}
+.custom-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000; /* Black text */
+    background-color: #fff; /* White background */
+    border: 2px solid #000; /* Black border */
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.custom-button:hover {
+    background-color: #000; /* Black on hover */
+    color: #fff; /* White text on hover */
+}
+
+.custom-button:active {
+    transform: scale(0.95); /* Click effect */
+}
+
+
+.incident-form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Adds spacing between form elements */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.incident-form label {
+    color: white;
+    font-size: 18px; /* Adjusted for better readability */
+    font-weight: 400; /* Slightly bolder for better visibility */
+    display: block; /* Ensures labels appear above inputs */
+    margin-top: 5px;
+}
+
+.incident-form input, .incident-form select {
+    padding: 12px;
+    width: 100%; /* Makes input fields responsive */
+    max-width: 400px; /* Prevents overly wide inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+.incident-form input:focus, .incident-form select:focus {
+    border-color: #007bff; /* Adds a blue border on focus */
+}
+
+
+.submit-result input {
+    padding: 12px;
+    width: 85%; /* Makes input fields responsive */
+    max-width: 400px; /* Prevents overly wide inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+.submit-result input:focus {
+    border-color: #007bff; /* Adds a blue border on focus */
+}
+
+.text-center{
+    text-align: center !important;
+}
+.VS{
+    text-align: center !important;
+}
+.vs-background{
+    font-size: xx-large;
+    font-weight: 300;
+    background-color: #007bff;
+    border-radius: 80%;
+    width: 100px;
+    justify-self: center;
+
+}
+.border-left-bold{
+    border-left: 2px solid #000;
+}
+
+.border-left-bold-white{
+    border-left: 2px solid #fff;
+}
+
+.red-card {
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.yellow-card {
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+    border-radius: 5px;
+}
+
+.white-card {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid #ccc; /* Adds a slight border for visibility */
+    border-radius: 5px;
+}
+.scored-by{
+    max-width: 220px;
+}
+.scored-by .heading{
+    color: #000;
+    padding: 8px;
+    margin: 0px;
+}
+.scored-by .left{
+    border: 1px solid #000;
+    width: 50%;
+}
+.scored-by .right{
+    border: 1px solid #000;
+    width: 50%;
+}
+
+.scored-by input{
+    padding: 8px;
+    width: 60%; /* Makes input fields responsive */
+    max-width: 400px; /* Prevents overly wide inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+.referee-performance input{
+    padding: 8px;
+    width: 60%; /* Makes input fields responsive */
+    max-width: 400px; /* Prevents overly wide inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+.heading{
+    align-self: center;
+    justify-self: center;
+    background-color: #ccc;
+    border-radius: 50px;
+    padding: 20px;
+}
+
+
+
+
+
+/* login signup and home page */
+
+.login-signup {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+.login-signup h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.login-signup label {
+    display: block;
+    margin: 15px 0 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.login-signup input , .login-signup select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+
+.login-signup .col-6{
+    width: 48%;
+    display: inline-block;
+    margin: 0 10px 0 10px;
+
+}
+
+.login-signup button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #153C57;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-signup button:hover {
+    background-color: #122f45;
+}
+
+.login-signup p {
+    margin-top: 15px;
+    color: red;
+    text-align: center;
+}
+
+
+/* index page */
+
+.match-home {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.match-home header {
+    background-color: #153C57;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.match-home main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.match-home main p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.match-home a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    color: #153C57;
+    border: 2px solid #153C57;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.match-home a:hover {
+    background-color: #153C57;
+    color: white;
+}
+
+.match-home footer {
+    background-color: #eee;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    color: #666;
+}
