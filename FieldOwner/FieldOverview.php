@@ -45,7 +45,7 @@
                                 session_start();
 
                                 if (!isset($_SESSION['email'])) {
-                                    header("Location: index.php");
+                                    header("Location: ../index.php");
                                     exit();
                                 }
 
@@ -85,7 +85,6 @@
                                     </tr>
                                 </thead>";
 
-                                    // Loop through the query result and display the data in table rows
                                     while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
                                         echo "<tr>
                                                 <td>" . htmlspecialchars($row['Field_name']) . "</td>
@@ -99,11 +98,9 @@
                                             </tr>";
                                     }
 
-                                    // End the table
                                     echo "</table>";
                                 }
 
-                                // Close the database connection
                                 $db->close();
                             ?>
 
