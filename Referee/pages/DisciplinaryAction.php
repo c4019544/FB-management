@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../index.php");
@@ -27,28 +26,14 @@ $query = "
 $stmt = $pdo->prepare($query);
 $stmt->execute();
 $actions = $stmt->fetchAll(PDO::FETCH_ASSOC);
-=======
-// session_start();
-// if (!isset($_SESSION['user_id'])) {
-// header("Location: ../login.php");
-// exit();
-// }
->>>>>>> jamie
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disciplinary Action</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-=======
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Disciplinary Action</title>
-<link rel="stylesheet" href="../assets/css/style.css">
->>>>>>> jamie
 </head>
 <body>
 <?php include '../includes/sidebar.php'; ?>
@@ -57,7 +42,6 @@ $actions = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <header>
         <h1>Disciplinary Action</h1>
     </header>
-<<<<<<< HEAD
     <p class="text-center">View Disciplinary Action</p>
 
     <div class="card-section">
@@ -91,9 +75,6 @@ $actions = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </table>
         </div>
     </div>
-=======
-    <p>Welcome to the Football Management System. - Disciplinary Action</p>
->>>>>>> jamie
 </div>
 </body>
 </html>

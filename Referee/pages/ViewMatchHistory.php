@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../index.php");
@@ -47,13 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['match_id'])) {
     // exit();
 }
  
-=======
-// session_start();
-// if (!isset($_SESSION['user_id'])) {
-// header("Location: ../login.php");
-// exit();
-// }
->>>>>>> jamie
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,7 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['match_id'])) {
             <table class="custom-table history-table">
                 <thead>
                     <tr>
-<<<<<<< HEAD
                         <th colspan="2"><?= htmlspecialchars($matchResults[0]['Team_name']) ?></th>
                         <th colspan="1"><?= htmlspecialchars($matchResults[0]['Goals']) ?></th>
                         <th colspan="2" class="VS"><div class="vs-background">VS</div></th>
@@ -83,15 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['match_id'])) {
                         <th colspan="1"><?= htmlspecialchars($matchResults[1]['Goals']) ?></th>
                     </tr>   
                     <!-- <tr class="sub-headings">
-=======
-                        <th colspan="2">England</th>
-                        <th colspan="1">12</th>
-                        <th colspan="2" class="VS"><div class="vs-background">VS</div></th>
-                        <th colspan="2">Spain</th>
-                        <th colspan="1">15</th>
-                    </tr>
-                    <tr class="sub-headings">
->>>>>>> jamie
                         <th>Players</th>
                         <th>Goal</th>
                         <th>Time</th>
@@ -101,7 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['match_id'])) {
                         <th>Goal</th>
                         <th>Time</th>
                         <th>Red/Yellow Card</th>
-<<<<<<< HEAD
                     </tr> -->
                 </thead>
                 <tbody>
@@ -148,137 +129,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['match_id'])) {
                         <td><b><?= htmlspecialchars($matchResults[1]['Fouls']) ?></b></td>
                     </tr>
                     
-=======
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Lionel Messi</td>
-                        <td>2</td>
-                        <td>13'</td>
-                        <td class="flex">
-                            <div class="yellow-card"></div>
-                            <div class="white-card"></div>
-                        </td>
-
-                        <td class="border-left-bold">Pedri</td>
-                        <td>1</td>
-                        <td>11'</td>
-                        <td class="flex">
-                            <div class="red-card"></div>
-                            <div class="white-card"></div>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>Lionel Messi</td>
-                        <td>2</td>
-                        <td>13'</td>
-                        <td class="flex">
-                            <div class="yellow-card"></div>
-                            <div class="white-card"></div>
-                        </td>
-
-                        <td class="border-left-bold">Pedri</td>
-                        <td>1</td>
-                        <td>11'</td>
-                        <td class="flex">
-                            <div class="red-card"></div>
-                            <div class="white-card"></div>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>Lionel Messi</td>
-                        <td>2</td>
-                        <td>13'</td>
-                        <td class="flex">
-                            <div class="yellow-card"></div>
-                            <div class="white-card"></div>
-                        </td>
-
-                        <td class="border-left-bold">Pedri</td>
-                        <td>1</td>
-                        <td>11'</td>
-                        <td class="flex">
-                            <div class="red-card"></div>
-                            <div class="white-card"></div>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>Lionel Messi</td>
-                        <td>2</td>
-                        <td>13'</td>
-                        <td class="flex">
-                            <div class="yellow-card"></div>
-                            <div class="white-card"></div>
-                        </td>
-
-                        <td class="border-left-bold">Pedri</td>
-                        <td>1</td>
-                        <td>11'</td>
-                        <td class="flex">
-                            <div class="red-card"></div>
-                            <div class="white-card"></div>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>Lionel Messi</td>
-                        <td>2</td>
-                        <td>13'</td>
-                        <td class="flex">
-                            <div class="yellow-card"></div>
-                            <div class="white-card"></div>
-                        </td>
-
-                        <td class="border-left-bold">Pedri</td>
-                        <td>1</td>
-                        <td>11'</td>
-                        <td class="flex">
-                            <div class="red-card"></div>
-                            <div class="white-card"></div>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>Lionel Messi</td>
-                        <td>2</td>
-                        <td>13'</td>
-                        <td class="flex">
-                            <div class="yellow-card"></div>
-                            <div class="white-card"></div>
-                        </td>
-
-                        <td class="border-left-bold">Pedri</td>
-                        <td>1</td>
-                        <td>11'</td>
-                        <td class="flex">
-                            <div class="red-card"></div>
-                            <div class="white-card"></div>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>Lionel Messi</td>
-                        <td>2</td>
-                        <td>13'</td>
-                        <td class="flex">
-                            <div class="yellow-card"></div>
-                            <div class="white-card"></div>
-                        </td>
-
-                        <td class="border-left-bold">Pedri</td>
-                        <td>1</td>
-                        <td>11'</td>
-                        <td class="flex">
-                            <div class="red-card"></div>
-                            <div class="white-card"></div>
-                        </td>
-
-                    </tr>
->>>>>>> jamie
                 </tbody>
             </table>
         </div>

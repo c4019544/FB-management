@@ -1,17 +1,9 @@
 <?php
-<<<<<<< HEAD
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../index.php");
 exit();
 }
-=======
-// session_start();
-// if (!isset($_SESSION['user_id'])) {
-// header("Location: ../login.php");
-// exit();
-// }
->>>>>>> jamie
 ?>
 <!DOCTYPE html>
 <html lang="en">
