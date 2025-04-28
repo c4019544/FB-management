@@ -112,6 +112,34 @@ if (isset($_GET['fetch_matches'])) {
             font-size: 1.5em;
             margin-bottom: 10px;
         }
+
+        .fc-toolbar h2 { 
+    color:#363e4e; 
+    padding-left: 10px;
+}
+
+        /* Color of the days of the week (Monday, Tuesday, etc.) */
+        .fc-day-header {
+            font-weight: bold; 
+            background-color: black !important;
+            color: white;
+        }
+
+        /* Change the color of the dates */
+        .fc-day{
+            background-color:#1e3c42;
+        }
+
+        /* the background color of today's date */
+        .fc-day-today {
+            background-color: #61727a !important; 
+        }
+
+        .fc-day:hover {
+            background-color: #ab5757; /* background on hover */
+            color:#b9b5b5;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
