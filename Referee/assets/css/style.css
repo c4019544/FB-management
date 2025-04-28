@@ -331,11 +331,7 @@ footer p {
     margin-top: 5px;
 }
 
-<<<<<<< HEAD
 .incident-form input, .incident-form select {
-=======
-.incident-form input {
->>>>>>> jamie
     padding: 12px;
     width: 100%; /* Makes input fields responsive */
     max-width: 400px; /* Prevents overly wide inputs */
@@ -346,11 +342,7 @@ footer p {
     transition: border 0.3s ease-in-out;
 }
 
-<<<<<<< HEAD
 .incident-form input:focus, .incident-form select:focus {
-=======
-.incident-form input:focus {
->>>>>>> jamie
     border-color: #007bff; /* Adds a blue border on focus */
 }
 
@@ -473,11 +465,7 @@ footer p {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-<<<<<<< HEAD
     max-width: 600px;
-=======
-    max-width: 400px;
->>>>>>> jamie
     box-sizing: border-box;
 }
 
@@ -494,11 +482,7 @@ footer p {
     color: #555;
 }
 
-<<<<<<< HEAD
 .login-signup input , .login-signup select {
-=======
-.login-signup input {
->>>>>>> jamie
     width: 100%;
     padding: 10px 12px;
     border: 1px solid #ccc;
@@ -507,7 +491,6 @@ footer p {
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 
 .login-signup .col-6{
     width: 48%;
@@ -516,8 +499,6 @@ footer p {
 
 }
 
-=======
->>>>>>> jamie
 .login-signup button {
     margin-top: 20px;
     width: 100%;
